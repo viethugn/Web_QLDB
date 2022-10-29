@@ -2,10 +2,12 @@
 $page_title = 'Welcome to this Site!';
 include('includes/header.html');
 ?>
-<h1>ĐỘI BÓNG TRONG MƠ</h1>
+<h1>Hướng dẫn</h1>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
 
 <?php
 include('includes/footer.html');
 ?>
-
-

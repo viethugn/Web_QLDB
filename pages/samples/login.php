@@ -49,7 +49,7 @@
                       Keep me signed in
                     </label>
                   </div>
-                  <a href="#" class="auth-link text-black">Forgot password?</a>
+                  <!-- <a href="#" class="auth-link text-black">Forgot password?</a> -->
                 </div>
                 <!-- <div class="text-center mt-4 font-weight-light">
                   Don't have an account? <a href="register.html" class="text-primary">Create</a>
@@ -67,8 +67,6 @@
   <!-- plugins:js -->
   <script src="../../vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <!-- End plugin js for this page -->
   <!-- inject:js -->
   <script src="../../js/off-canvas.js"></script>
   <script src="../../js/hoverable-collapse.js"></script>

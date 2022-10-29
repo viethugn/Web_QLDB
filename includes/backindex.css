@@ -28,8 +28,8 @@
   -webkit-user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  width: 100px;
-
+  width: 180px;
+  height: 40px;
 }
 .button-19>a{
   text-decoration: none;
