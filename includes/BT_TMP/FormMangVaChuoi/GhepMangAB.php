@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,33 +9,31 @@
 
 
     <style type="text/css">
+        table {
 
-table{
+            color: #ffff00;
 
-    color: #ffff00;
+            background-color: gray;
 
-    background-color: gray;     
+        }
 
-}
+        table th {
 
-table th{
+            background-color: blue;
 
-    background-color: blue;
+            font-style: vni-times;
 
-    font-style: vni-times;
+            color: yellow;
 
-    color: yellow;
-
-}
-
-</style>
+        }
+    </style>
 </head>
 
 
 
 <body>
-    
-<?php
+
+    <?php
     // initialize sticky form
     if (isset($_POST['inpA']))
         $inpA = $_POST['inpA'];
@@ -121,5 +120,9 @@ table th{
             </tr>
         </table>
     </form>
+    <?php
+    include('../../backindex.html');
+    ?>
 </body>
+
 </html>

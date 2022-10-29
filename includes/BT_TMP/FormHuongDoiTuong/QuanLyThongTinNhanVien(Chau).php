@@ -9,27 +9,25 @@
     <title>Quản lý nhân viên</title>
 
 
-<style type="text/css">
+    <style type="text/css">
+        table {
 
-table{
+            color: #ffff00;
 
-    color: #ffff00;
+            background-color: gray;
 
-    background-color: gray;     
+        }
 
-}
+        table th {
 
-table th{
+            background-color: blue;
 
-    background-color: blue;
+            font-style: vni-times;
 
-    font-style: vni-times;
+            color: yellow;
 
-    color: yellow;
-
-}
-
-</style>
+        }
+    </style>
 
 
 
@@ -43,7 +41,7 @@ table th{
 
 <body>
     <?php
- 
+
     abstract class NhanVien
     {
         protected $name, $gender, $dateWork, $coefficientsSalary, $numChildren;
@@ -70,7 +68,7 @@ table th{
         }
         public function getDateWork()
         {
-            
+
             $yearsOfWork = explode("/", $this->dateWork);
 
             return date("Y") - $yearsOfWork[4];
@@ -95,7 +93,7 @@ table th{
         abstract public function subsidizeCal();
         abstract public function bonuseCal();
     }
-   
+
     class VanPhong extends NhanVien
     {
         private  $absent;
@@ -135,7 +133,7 @@ table th{
             return $this->getDateWork() * 1000000;
         }
     }
- 
+
     class SanXuat extends NhanVien
     {
         private $product;
@@ -165,7 +163,7 @@ table th{
             return $this->getProduct() * self::productPrice + $this->bonuseCal();
         }
     }
- 
+
     if (isset($_POST['name']))
         $name = $_POST['name'];
     else
@@ -267,11 +265,11 @@ table th{
     <form action="" method="post">
         <table>
 
-            <th  colspan="4" align="center">QUẢN LÝ NHÂN VIÊN</th>
+            <th colspan="4" align="center">QUẢN LÝ NHÂN VIÊN</th>
 
             <tr>
                 <td>Họ và tên: </td>
-                <td><input type="text" value="<?php echo $name ?>" name="name"  required></td>
+                <td><input type="text" value="<?php echo $name ?>" name="name" required></td>
                 <td>Số con: </td>
                 <td><input type="text" value="<?php echo $numChildren ?>" name="numChildren" required></td>
             </tr>
@@ -319,6 +317,10 @@ table th{
                 </tr>
         </table>
     </form>
+    <br><br>
+    <?php
+    include('../../backindex.html');
+    ?>
 </body>
 
 </html>

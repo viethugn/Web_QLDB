@@ -13,5 +13,9 @@
 			echo "Gioi tinh : " . $_POST['radGT'];
 		}
 	?>
+	<br><br>
+	<?php
+	include('../../backindex.html');
+	?>
 </body>
 </html>

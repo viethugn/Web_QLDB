@@ -6,19 +6,19 @@
 
 		<select name="lunch">
 
-			<option value="pork" <?php if(isset($_POST['lunch'])&& $_POST['lunch']=='pork') echo 'selected';?>>
+			<option value="pork" <?php if (isset($_POST['lunch']) && $_POST['lunch'] == 'pork') echo 'selected'; ?>>
 
 				BBQ Pork Bun
 
 			</option>
 
-			<option value="chicken" <?php if(isset($_POST['lunch'])&& $_POST['lunch']=='chicken') echo 'selected';?>>
+			<option value="chicken" <?php if (isset($_POST['lunch']) && $_POST['lunch'] == 'chicken') echo 'selected'; ?>>
 
 				Chicken Bun
 
 			</option>
 
-			<option value="lotus" <?php if(isset($_POST['lunch'])&& $_POST['lunch']=='lotus') echo 'selected';?>>
+			<option value="lotus" <?php if (isset($_POST['lunch']) && $_POST['lunch'] == 'lotus') echo 'selected'; ?>>
 
 				Lotus Seed Bun
 
@@ -30,18 +30,20 @@
 
 	</form>
 
-	Selected buns:<br/>
+	Selected buns:<br />
 
 	<?php
 
-		if (isset($_POST['lunch'])){
+	if (isset($_POST['lunch'])) {
 
-			print 'You want a ' . $_POST["lunch"] . ' bun. <br/>';
-
-		}
+		print 'You want a ' . $_POST["lunch"] . ' bun. <br/>';
+	}
 
 	?>
-
+	<br><br>
+	<?php
+	include('../../backindex.html');
+	?>
 </body>
 
 </html>

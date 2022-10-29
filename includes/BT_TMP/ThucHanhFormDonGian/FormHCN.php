@@ -9,14 +9,13 @@
     <title>tinh dien tich HCN</title>
 
     <style type="text/css">
-
-        body {  
+        body {
 
             background-color: black;
 
         }
 
-        table{
+        table {
 
             background: #ffd94d;
 
@@ -24,9 +23,9 @@
 
         }
 
-        thead{
+        thead {
 
-            background: #fff14d;    
+            background: #fff14d;
 
         }
 
@@ -36,7 +35,7 @@
 
         }
 
-        h3{
+        h3 {
 
             font-family: verdana;
 
@@ -49,7 +48,6 @@
             font-size: medium;
 
         }
-
     </style>
 
 </head>
@@ -60,43 +58,43 @@
 
 
 
-<?php 
+    <?php
 
 
 
-if(isset($_POST['chieudai']))  
+    if (isset($_POST['chieudai']))
 
 
 
-    $chieudai=trim($_POST['chieudai']); 
+        $chieudai = trim($_POST['chieudai']);
 
 
 
-else $chieudai=0;
+    else $chieudai = 0;
 
 
 
-if(isset($_POST['chieurong'])) 
+    if (isset($_POST['chieurong']))
 
 
 
-    $chieurong=trim($_POST['chieurong']); 
+        $chieurong = trim($_POST['chieurong']);
 
 
 
-else $chieurong=0;
+    else $chieurong = 0;
 
 
 
-if(isset($_POST['tinh']))
+    if (isset($_POST['tinh']))
 
 
 
-        if (is_numeric($chieudai) && is_numeric($chieurong))  
+        if (is_numeric($chieudai) && is_numeric($chieurong))
 
 
 
-            $dientich=$chieudai * $chieurong;
+            $dientich = $chieudai * $chieurong;
 
 
 
@@ -104,23 +102,20 @@ if(isset($_POST['tinh']))
 
 
 
-                echo "<font color='red'>Vui lòng nhập vào số! </font>"; 
+            echo "<font color='red'>Vui lòng nhập vào số! </font>";
 
 
 
-                $dientich="";
+            $dientich = "";
+        }
 
 
 
-            }
+    else $dientich = 0;
 
 
 
-else $dientich=0;
-
-
-
-?>
+    ?>
 
 
 
@@ -128,58 +123,66 @@ else $dientich=0;
 
 
 
-<form align='center' action="FormHCN.php" method="post">
+    <form align='center' action="FormHCN.php" method="post">
 
-<table>
+        <table>
 
-    <thead>
+            <thead>
 
-        <th colspan="2" align="center"><h3>DIỆN TÍCH HÌNH CHỮ NHẬT</h3></th>
+                <th colspan="2" align="center">
+                    <h3>DIỆN TÍCH HÌNH CHỮ NHẬT</h3>
+                </th>
 
-    </thead>
+            </thead>
 
-    <tr><td>Chiều dài:</td>
+            <tr>
+                <td>Chiều dài:</td>
 
-     <td><input type="text" name="chieudai" value="<?php  echo $chieudai;?> "/></td>
+                <td><input type="text" name="chieudai" value="<?php echo $chieudai; ?> " /></td>
 
-    </tr>
+            </tr>
 
-    <tr><td>Chiều rộng:</td>
+            <tr>
+                <td>Chiều rộng:</td>
 
-     <td><input type="text" name="chieurong" value="<?php  echo $chieurong;?> "/></td>
+                <td><input type="text" name="chieurong" value="<?php echo $chieurong; ?> " /></td>
 
-    </tr>
+            </tr>
 
-    <tr><td>Diện tích:</td>
-
-
-
-     <td><input type="text" name="dientich" disabled="disabled" value="<?php  echo $dientich;?> "/></td>
-
-
-
-    </tr>
+            <tr>
+                <td>Diện tích:</td>
 
 
 
-    <tr>
+                <td><input type="text" name="dientich" disabled="disabled" value="<?php echo $dientich; ?> " /></td>
 
 
 
-     <td colspan="2" align="center"><input type="submit" value="Tính" name="tinh" /></td>
+            </tr>
 
 
 
-    </tr>
+            <tr>
 
 
 
-</table>
+                <td colspan="2" align="center"><input type="submit" value="Tính" name="tinh" /></td>
 
 
 
-</form>
+            </tr>
 
+
+
+        </table>
+
+
+
+    </form>
+    <br><br>
+    <?php
+    include('../../backindex.html');
+    ?>
 
 
 </body>

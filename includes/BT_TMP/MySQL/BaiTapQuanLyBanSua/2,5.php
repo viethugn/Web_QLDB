@@ -61,8 +61,8 @@
 
         or die('Could not connect to MySQL: ' . mysqli_connect_error());
 
-        $sql =
-    "SELECT Ten_sua,Ten_hang_sua,Ten_loai,Trong_luong,Don_gia,Hinh
+    $sql =
+        "SELECT Ten_sua,Ten_hang_sua,Ten_loai,Trong_luong,Don_gia,Hinh
     FROM  loai_sua LS INNER JOIN sua S ON LS.Ma_loai_sua = S.Ma_loai_sua
                      INNER JOIN hang_sua HS ON S.Ma_hang_sua = HS.Ma_hang_sua";
 
@@ -83,8 +83,8 @@
 
 
     $dem = 0;
-    if (mysqli_num_rows($result) <>0) {
-       
+    if (mysqli_num_rows($result) <> 0) {
+
 
         while ($rows = mysqli_fetch_row($result)) {
             echo "<tr>";
@@ -96,23 +96,22 @@
                     $rows[2] - $rows[3] gr - $rows[4] VNĐ
             
             </td>";
-            
 
- 
+
+
 
             echo "</tr>";
-            $dem ++;
-            if($dem >=3)
+            $dem++;
+            if ($dem >= 3)
                 break;
-            
-
-            
         }
     }
 
     echo "</table>";
     //echo"<img src= C:\\xampp\htdocs\\BaiTapTrenLop\MySQL\\BaiTapQuanLyBanSua\\Hinh_sua\\s_abbott_gainadvance_bot_400.jpg>";
     ?>
+    <link rel="stylesheet" href="../../../../includes/backindex.css" type="text/css" media="screen" />
+    <button class="button-19" role="button"><a href="../../../../baitap.php">Back Home</a></button>
 </body>
 
 </html>

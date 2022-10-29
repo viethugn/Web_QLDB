@@ -90,6 +90,9 @@
 		    </tr>
 		</table>
 	</form>
-
+	<br><br>
+	<?php
+	include('../../backindex.html');
+	?>
 </body>
 </html>

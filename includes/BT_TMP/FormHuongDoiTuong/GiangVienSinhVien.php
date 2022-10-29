@@ -49,42 +49,29 @@
 		protected $hoTen, $diaChi, $gioiTinh;
 
 		public function setHoTen($ten){
-
 			$this->hoTen=$ten;
-
 		}
 
 		public function getHoTen(){
-
 			return $this->hoTen;
-
 		}
 
 		public function setDiachi($dc){
-
 			$this->diaChi=$dc;
-
 		}
 
 		public function getDiachi(){
-
 			return $this->diaChi;
-
 		}
 
 		public function setGioitinh($gt){
-
 			$this->gioiTinh=$gt;
-
 		}
 
 		public function getGioiTinh(){
-
 			return $this->gioiTinh;
-
 		}
-
-
+		
 
 	}
 
@@ -120,6 +107,7 @@
 					return 0; break;
 			}
 		}
+
 
 	}
 	
@@ -307,8 +295,10 @@
 
 </form>
 
-
-
+<br><br>
+<?php
+	include('../../backindex.html');
+?>
 </body>
 
 </html>

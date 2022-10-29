@@ -2,56 +2,55 @@
 
 <body>
 
-<form method="POST" action="FormListBox.php">
+	<form method="POST" action="FormListBox.php">
 
-	<select name="lunch[]" multiple>
+		<select name="lunch[]" multiple>
 
-		<option value="pork"  selected>
+			<option value="pork" selected>
 
-			BBQ Pork Bun
+				BBQ Pork Bun
 
-		</option>
+			</option>
 
-		<option value="chicken">
+			<option value="chicken">
 
-			Chicken Bun
+				Chicken Bun
 
-		</option>
+			</option>
 
-		<option value="lotus">
+			<option value="lotus">
 
-			Lotus Seed Bun
+				Lotus Seed Bun
 
-		</option>
+			</option>
 
-	</select>
+		</select>
 
-	<p>
+		<p>
 
-	<input type="submit" name="submit" value="Submit your order">
+			<input type="submit" name="submit" value="Submit your order">
 
-</form>
+	</form>
 
 
 
-Selected buns:<br/>
+	Selected buns:<br />
 
-<?php
+	<?php
 
 	if (isset($_POST['lunch'])) {
 
 		foreach ($_POST['lunch'] as $choice) {
 
-	    	print "You want a $choice bun. <br/>";
-
+			print "You want a $choice bun. <br/>";
 		}
-
-		
-
 	}
 
-?>
-
+	?>
+	<br><br>
+	<?php
+	include('../../backindex.html');
+	?>
 </body>
 
 </html>

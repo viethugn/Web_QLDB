@@ -61,9 +61,9 @@
 
         or die('Could not connect to MySQL: ' . mysqli_connect_error());
 
-        $sql = "SELECT Ten_sua,Trong_luong,Don_gia,Hinh
+    $sql = "SELECT Ten_sua,Trong_luong,Don_gia,Hinh
                 FROM  sua ";
-   
+
 
     $result = mysqli_query($conn, $sql);
 
@@ -76,13 +76,13 @@
 
 
     $dem = 0;
-    if (mysqli_num_rows($result) <>0) {
-       
+    if (mysqli_num_rows($result) <> 0) {
+
 
         while ($rows = mysqli_fetch_row($result)) {
 
 
-        
+
 
             echo "<td><b>$rows[0]</b> <br>
                     $rows[1] gr - $rows[2] VNĐ<br>
@@ -90,30 +90,27 @@
 
             
             </td>";
-            
-
- 
 
 
-            $dem ++;
 
-            if($dem == 5)
+
+
+            $dem++;
+
+            if ($dem == 5)
                 echo "<tr>";
-            if($dem >=10)
-            {
-                echo"</tr>";
+            if ($dem >= 10) {
+                echo "</tr>";
                 break;
             }
-               
-            
-
-            
         }
     }
 
     echo "</table>";
 
     ?>
+    <link rel="stylesheet" href="../../../../includes/backindex.css" type="text/css" media="screen" />
+    <button class="button-19" role="button"><a href="../../../../baitap.php">Back Home</a></button>
 </body>
 
 </html>

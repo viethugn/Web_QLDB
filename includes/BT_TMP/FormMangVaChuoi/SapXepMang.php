@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,30 +9,29 @@
 
 
     <style type="text/css">
+        table {
 
-    table{
+            color: #ffff00;
 
-        color: #ffff00;
+            background-color: gray;
 
-        background-color: gray;     
+        }
 
-    }
+        table th {
 
-    table th{
+            background-color: blue;
 
-        background-color: blue;
+            font-style: vni-times;
 
-        font-style: vni-times;
+            color: yellow;
 
-        color: yellow;
-
-    }
-
+        }
     </style>
 </head>
+
 <body>
 
-<?php 
+    <?php
 
     function Hoan_Vi(&$a, &$b)
     {
@@ -43,13 +43,12 @@
     function SapXep_Giam($arr)
     {
         for ($i = 0; $i < count($arr) - 1; $i++)
-            for ($j = $i + 1; $j < count($arr); $j++)
-            {
+            for ($j = $i + 1; $j < count($arr); $j++) {
                 if ($arr[$i] < $arr[$j]) {
-                    Hoan_Vi( $arr[$j],$arr[$i] );
+                    Hoan_Vi($arr[$j], $arr[$i]);
                 }
             }
-    return $arr;
+        return $arr;
     }
 
     function SapXep_Tang($arr)
@@ -57,20 +56,20 @@
         for ($i = 0; $i < count($arr) - 1; $i++)
             for ($j = $i + 1; $j < count($arr); $j++) {
                 if ($arr[$i] > $arr[$j]) {
-                    Hoan_Vi($arr[$i] , $arr[$j]);
+                    Hoan_Vi($arr[$i], $arr[$j]);
                 }
             }
         return $arr;
     }
 
-    
-    if(isset($_POST['inp']))
+
+    if (isset($_POST['inp']))
         $inp = $_POST['inp'];
     else
         $inp = "";
 
 
-    if(isset($_POST['tangDan']))
+    if (isset($_POST['tangDan']))
         $tangDan = $_POST['tangDan'];
     else
         $tangDan = '';
@@ -85,8 +84,7 @@
     $arr = array();
 
 
-    if (isset($_POST['tinh'])) 
-    {
+    if (isset($_POST['tinh'])) {
         $arr = explode(",", $inp);
 
 
@@ -106,44 +104,51 @@
 
 
 
-?>
-    
+    ?>
 
 
 
 
 
 
-<form action="" method="post">
-<table border="0" cellpadding="0">
-    <th colspan="2"><h2>SẮP XẾP MẢNG TĂNG GIẢM</h2></th>
 
-    <tr>
-        <td>Nhập các phần tử:</td>
-        <td><input  type="text" value="<?php echo $inp ?>" name="inp" required><b>(*)</b></td>
-    </tr>
+    <form action="" method="post">
+        <table border="0" cellpadding="0">
+            <th colspan="2">
+                <h2>SẮP XẾP MẢNG TĂNG GIẢM</h2>
+            </th>
 
-
-    <tr>
-        <td></td>
-        <td><input type="submit" name="tinh"  size="20" value="Sắp xếp tăng/giảm"/></td>
-    </tr>
+            <tr>
+                <td>Nhập các phần tử:</td>
+                <td><input type="text" value="<?php echo $inp ?>" name="inp" required><b>(*)</b></td>
+            </tr>
 
 
-    </tr>
-        <td>Mảng sau khi sắp xếp tăng:</td>
-        <td><input type="text" name="tang" size= "70" disabled="disabled" value="<?php echo $tangDan;?>"/></td>
-    </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="tinh" size="20" value="Sắp xếp tăng/giảm" /></td>
+            </tr>
 
-    </tr>
-        <td>Mảng sau khi sắp xếp giảm:</td>
-        <td><input type="text" name="giam" size= "70" disabled="disabled" value="<?php echo $giamDan;?>"/></td>
-    </tr>
 
-    <tr >
-        <td colspan="2" align="center"><label>(Các phần tử trong mảng sẽ cách nhau bằng dấu ",")</label></td>
-    </tr>
-</table>
-</form>
+            </tr>
+            <td>Mảng sau khi sắp xếp tăng:</td>
+            <td><input type="text" name="tang" size="70" disabled="disabled" value="<?php echo $tangDan; ?>" /></td>
+            </tr>
+
+            </tr>
+            <td>Mảng sau khi sắp xếp giảm:</td>
+            <td><input type="text" name="giam" size="70" disabled="disabled" value="<?php echo $giamDan; ?>" /></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center"><label>(Các phần tử trong mảng sẽ cách nhau bằng dấu ",")</label></td>
+            </tr>
+        </table>
+    </form>
+    <br><br>
+    <?php
+    include('../../backindex.html');
+    ?>
 </body>
+
 </html>

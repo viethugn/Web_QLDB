@@ -27,7 +27,10 @@
 		print "Your comment: " . $_POST["comment"];
 
 ?>
-
+<br><br>
+	<?php
+	include('../../backindex.html');
+	?>
 </body>
 
 </html>

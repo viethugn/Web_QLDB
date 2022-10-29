@@ -23,7 +23,10 @@
 		print "Hello Ubuntu " . $_POST["Name"];
 
 ?>
-
+<br><br>
+	<?php
+	include('../../backindex.html');
+	?>
 </body>
 
 </html>

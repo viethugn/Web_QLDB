@@ -176,7 +176,8 @@ Next
     ?>
 
 
-
+    <link rel="stylesheet" href="../../../../includes/backindex.css" type="text/css" media="screen" />
+    <button class="button-19" role="button"><a href="../../../../baitap.php">Back Home</a></button>
 </body>
 
 </html>

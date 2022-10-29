@@ -26,7 +26,7 @@
     $tong = "";
     if (isset($_POST['tinh'])) {
       $str = $_POST['mang'];
-      fwrite($fp,$str);
+      fwrite($fp, $str);
       $arr = explode(",", $str);
       $tong = tongdayso($arr);
     }
@@ -35,7 +35,7 @@
   ?>
 
 
-  
+
 
 
   <form action="" method="post">
@@ -68,6 +68,10 @@
       </tr>
     </table>
   </form>
+  <br><br>
+  <?php
+  include('../../backindex.html');
+  ?>
 </body>
 
 </html>

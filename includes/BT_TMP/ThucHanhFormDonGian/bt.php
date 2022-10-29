@@ -32,4 +32,8 @@
 			break;	
 	}
 	?>
+	<br><br>
+	<?php
+	include('../../backindex.html');
+	?>
 </body>
