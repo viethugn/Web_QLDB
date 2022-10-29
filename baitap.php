@@ -69,7 +69,7 @@ include('includes/header.html');
             </ul>
         </li>
         <li>
-            <input type="checkbox" checked="checked" id="c7" /> <!--  checked="checked" -->
+        <input type="checkbox" checked="checked" id="c7" /> <!--  checked="checked" -->
             <label class="tree_label" for="c7">Trương Minh Phi</label>
             <ul>
                 <li>
@@ -77,50 +77,58 @@ include('includes/header.html');
                     <!--checked="checked"  -->
                     <label for="c8" class="tree_label">Form</label>
                     <ul>
-                        <li><span class="tree_label">Level 2</span></li>
-                        <li><span class="tree_label">Level 2</span></li>
+                        <li><a href="BT_TMP/ThucHanhFormDonGian/BangCuuChuongRD.php"><span class="tree_label">Bảng cửu chương</span></a></li>
+                        <li><a href="BT_TMP/ThucHanhFormDonGian/bt.php"><span class="tree_label">Chu vi diện tích HCN</span></a></li>
+                        <li><a href="BT_TMP/ThucHanhFormDonGian/DocFile.php"><span class="tree_label">Đọc ghi file</span></a></li>
+                        <li><a href="BT_TMP/ThucHanhFormDonGian/FormCheckBox.php"><span class="tree_label">Form check box</span></a></li>
+                        <li><a href="BT_TMP/ThucHanhFormDonGian/FormComboBox.php"><span class="tree_label">Form combo box</span></a></li>
+                        <li><a href="BT_TMP/ThucHanhFormDonGian/FormHCN.php"><span class="tree_label">Form HCN</span></a></li>
+                        <li><a href="BT_TMP/ThucHanhFormDonGian/FormListBox.php"><span class="tree_label">Form list box</span></a></li>
+                        <li><a href="BT_TMP/ThucHanhFormDonGian/FormMultiplelineText.php"><span class="tree_label">Text area</span></a></li>
+                        <li><a href="BT_TMP/ThucHanhFormDonGian/FormRadioButton.php"><span class="tree_label">Radio button</span></a></li>
+                        <li><a href="BT_TMP/ThucHanhFormDonGian/FormTextField1.php"><span class="tree_label">Form text 1</span></a></li>
+                        <li><a href="BT_TMP/ThucHanhFormDonGian/FormTextField2.php"><span class="tree_label">Form text 2</span></a></li>
+                        <li><a href="BT_TMP/ThucHanhFormDonGian/FormTinhTienDien.php"><span class="tree_label">Form tính tiền điện</span></a></li>
                     </ul>
                 </li>
                 <li>
                     <input type="checkbox" checked="checked" id="c9" />
                     <label for="c9" class="tree_label">OOP</label>
                     <ul>
-                        <li><span class="tree_label">Level 2</span></li>
-                        <li>
-                            <input type="checkbox" id="c10" />
-                            <label for="c10" class="tree_label"><span class="tree_custom">Specified tree item view</span></label>
-                            <ul>
-                                <li><span class="tree_label">Level 3</span></li>
-                            </ul>
-                        </li>
+                        <li><a href="BT_TMP/FormHuongDoiTuong/ChuViDienTichHinhTronVuong.php"><span class="tree_label">Tính CV và DT các hình</span></a></li>
+                        <li><a href="BT_TMP/FormHuongDoiTuong/GiangVienSinhVien.php"><span class="tree_label">Giảng viên sinh viên</span></a></li>
+                        <li><a href="BT_TMP/FormHuongDoiTuong/QuanLyThongTinNhanVien.php"><span class="tree_label">Quản lý thông tin nhân viên</span></a></li>
+                        <li><a href="BT_TMP/FormHuongDoiTuong/XuLyPhanSo.php"><span class="tree_label">Xử lý phân số</span></a></li>
                     </ul>
                 </li>
                 <li>
                     <input type="checkbox" checked="checked" id="c11" />
                     <label for="c11" class="tree_label">Array & String</label>
                     <ul>
-                        <li><span class="tree_label">Level 2</span></li>
-                        <li>
-                            <input type="checkbox" checked="checked" id="c12" />
-                            <label for="c12" class="tree_label"><span class="tree_custom">Specified tree item view</span></label>
-                            <ul>
-                                <li><span class="tree_label">Level 3</span></li>
-                            </ul>
-                        </li>
+                        <li><a href="BT_TMP/FormMangVaChuoi/TimNamAmLich.php"><span class="tree_label">Tìm năm âm lịch</span></a></li>
+                        <li><a href="BT_TMP/FormMangVaChuoi/TimKiemPhanTu.php"><span class="tree_label">Tìm kiếm phẩn tử trong mảng</span></a></li>
+                        <li><a href="BT_TMP/FormMangVaChuoi/ThayThePhanTu.php"><span class="tree_label">Thay thế phần tử trong mảng</span></a></li>
+                        <li><a href="BT_TMP/FormMangVaChuoi/ThaoTacTrenMangSoNguyen.php"><span class="tree_label">Thao tác trên mảng số nguyên</span></a></li>
+                        <li><a href="BT_TMP/FormMangVaChuoi/SapXepMang.php"><span class="tree_label">Sắp xếp mảng theo chiều tăng giảm</span></a></li>
+                        <li><a href="BT_TMP/FormMangVaChuoi/PhatSinhMangVaTinhToan.php"><span class="tree_label">Phát sinh mảng và tính toán</span></a></li>
+                        <li><a href="BT_TMP/FormMangVaChuoi/NhapVaTinhTong.php"><span class="tree_label">Nhập mảng và tính tổng giá trị</span></a></li>
+                        <li><a href="BT_TMP/FormMangVaChuoi/HienThiMaTran.php"><span class="tree_label">Hiển thị random mảng 2 chiều và tính toán đơn giản</span></a></li>
+                        <li><a href="BT_TMP/FormMangVaChuoi/GhepMangAB.php"><span class="tree_label">Ghép mảng A và B thành mảng C</span></a></li>
                     </ul>
                 </li>
                 <li>
                     <input type="checkbox" checked="checked" id="c13" />
                     <label for="c13" class="tree_label">Database</label>
                     <ul>
-                        <li><span class="tree_label">Level 2</span></li>
-                        <li>
-                            <input type="checkbox" checked="checked" id="c14" />
-                            <label for="c14" class="tree_label"><span class="tree_custom">Specified tree item view</span></label>
-                            <ul>
-                                <li><span class="tree_label">Level 3</span></li>
-                            </ul>
-                        </li>
+                    <li><a href="BT_TMP/MySQL/BaiTapQuanLyBanSua/BaiTapMauKetNoiSQL.php"><span class="tree_label">Kết nối SQL với PHP</span></a></li>
+                    <li><a href="BT_TMP/MySQL/BaiTapQuanLyBanSua/2,1.php"><span class="tree_label">Bài 2.1</span></a></li>
+                    <li><a href="BT_TMP/MySQL/BaiTapQuanLyBanSua/2,2.php"><span class="tree_label">Bài 2.2</span></a></li>
+                    <li><a href="BT_TMP/MySQL/BaiTapQuanLyBanSua/2,3.php"><span class="tree_label">Bài 2.3</span></a></li>
+                    <li><a href="BT_TMP/MySQL/BaiTapQuanLyBanSua/2,4.php"><span class="tree_label">Bài 2.4</span></a></li>
+                    <li><a href="BT_TMP/MySQL/BaiTapQuanLyBanSua/2,5.php"><span class="tree_label">Bài 2.5</span></a></li>
+                    <li><a href="BT_TMP/MySQL/BaiTapQuanLyBanSua/2,6.php"><span class="tree_label">Bài 2.6</span></a></li>
+                    <li><a href="BT_TMP/MySQL/BaiTapQuanLyBanSua/2,7.php class="tree_label">Bài 2.7</span></a></li>
+                    <li><a href="BT_TMP/MySQL/BaiTapQuanLyBanSua/2,8.php"><span class="tree_label">Bài 2.8</span></a></li>
                     </ul>
                 </li>
             </ul>

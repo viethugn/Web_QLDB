@@ -71,7 +71,7 @@ session_start(); //sử dụng để bắt đầu một session.
                 echo "Ngành: Công nghệ thông tin<br/>";
             elseif ($nganh == 'kt')
                 echo "Ngành: Kinh tế<br/>";
-            elseif ($trinhdo == 'khac')
+            elseif ($nganh == 'khac')
                 echo "Ngành: Khác<br/>";
             echo "Điểm thưởng: $luongcb";
         }
