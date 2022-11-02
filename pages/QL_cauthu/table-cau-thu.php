@@ -3,7 +3,49 @@
 
 <?php
 include('../../includes/header_admin.html');
+
 ?>
+
+<style>
+  .div_pt {
+    width: auto;
+    height: auto;
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .div_pt>a,
+  .div_pt>.active_bg {
+    /* border: 0.5px solid grey; */
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+  .active_bg {
+    background-color: #9AB87A;
+  }
+
+  .div_pt>a:hover {
+    background-color: grey;
+  }
+
+  .btn_add {
+    border: 0.5px solid grey;
+    background-color: #4B49AC;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+
+  .btn_add>a {
+    text-decoration: none;
+  }
+
+  .btn_add:hover {
+    background-color:#9AB87A;
+  }
+</style>
 
 <body>
   <div class="container-scroller">
@@ -33,45 +75,48 @@ include('../../includes/header_admin.html');
               </div>
             </div>
           </div>
+          <div class="row page-titles">
+            <div class="col-md-5 align-self-center"></div>
+            <div class="col-md-7 align-self-center text-right">
+              <div class="d-flex justify-content-end align-items-center">
+                <div class="btn_add">
+                  <a href='add.php' class="text-white"><i class="fa fa-plus"></i> Thêm cầu thủ</a>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="row">
             <!-- Progress Table start -->
-            <div class="col-12 mt-5">
+            <div class="col-12 mt-3">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="header-title">Danh sách cầu thủ</h4>
+                  <h4 class="header-title"><b>Danh sách cầu thủ</b></h4>
                   <div class="single-table">
-                    <div class="table-responsive">
+                    <div class="table-responsive ">
                       <table class="table table-hover progress-table text-center">
                         <thead class="text-uppercase">
                           <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">task</th>
-                            <th scope="col">Deadline</th>
-                            <th scope="col">Progress</th>
-                            <th scope="col">status</th>
-                            <th scope="col">action</th>
+                            <th scope="col">Mã cầu thủ</th>
+                            <th scope="col">Họ tên</th>
+                            <th scope="col">Vị trí</th>
+                            <th scope="col">Ngày sinh</th>
+                            <th scope="col">Giới tính</th>
+                            <th scope="col">Địa chỉ</th>
+                            <th scope="col">Mã CLB</th>
+                            <th scope="col">Mã QG</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>09 / 07 / 2018</td>
-                            <td>
-                              <div class="progress" style="height: 8px;">
-                                <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </td>
-                            <td><span class="status-p bg-primary">pending</span></td>
-                            <td>
-                              <ul class="d-flex justify-content-center">
-                                <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                              </ul>
-                            </td>
-                          </tr>
+                          <?php
+                          include('xulyhienthicauthu.php');
+                          ?>
                         </tbody>
                       </table>
+                      <div align='center' class="pt_block">
+                        <?php
+                        include('phantrang.php');
+                        ?>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -93,7 +138,7 @@ include('../../includes/header_admin.html');
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-   <script src="../../vendors/js/vendor.bundle.base.js"></script>
+  <script src="../../vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- inject:js -->
   <script src="../../js/off-canvas.js"></script>

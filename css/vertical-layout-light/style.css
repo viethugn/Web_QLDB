@@ -5621,8 +5621,12 @@ button.bg-dark:focus,
 
 .justify-content-center, .email-wrapper .message-body .attachments-sections ul li .thumb {
   justify-content: center !important;
-}
 
+}
+.justify-content-center{
+  padding: 0;
+  margin: 0;
+}
 .justify-content-between {
   justify-content: space-between !important;
 }
@@ -19018,5 +19022,6 @@ div.tagsinput span.tag a {
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
 }
+
 
 
