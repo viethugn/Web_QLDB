@@ -6,7 +6,7 @@ $sql_clb = 'select * from cau_lac_bo';
 $result = mysqli_query($conn, $sql_clb);
 
 if (mysqli_num_rows($result) <> 0) {
-    echo "<select name='caulacbo' class='wid2'>";
+    echo "<select name='caulacbo' class='form-select'>";
     while ($rows = $result->fetch_assoc()) {
         if ($rows['ma_clb'] == $caulacbo) {
             $select = "selected";

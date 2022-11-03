@@ -12,7 +12,7 @@ if (!isset($_GET['page'])) {
 //vị trí của mẩu tin đầu tiên trên mỗi trang
 $offset = ($_GET['page'] - 1) * $rowsPerPage;
 
-$sql = 'select ma_cau_thu, ho_ten_cau_thu, vi_tri, ngay_sinh, gioi_tinh, dia_chi, cau_lac_bo.ma_clb, quoc_gia.ma_qg 
+$sql = 'select ma_cau_thu, ho_ten_cau_thu, vi_tri, ngay_sinh, gioi_tinh, dia_chi,cau_lac_bo.ten_clb,quoc_gia.ten_qg
 	from cau_thu, cau_lac_bo, quoc_gia
     where cau_thu.ma_clb = cau_lac_bo.ma_clb and cau_thu.ma_qg = quoc_gia.ma_qg  
     LIMIT ' . $offset . ', ' . $rowsPerPage;
@@ -29,8 +29,8 @@ if (mysqli_num_rows($result) <> 0) {
 		echo "<td>" . $rows['ngay_sinh'] . "</td>";
 		echo "<td>" . $rows['gioi_tinh'] . "</td>";
 		echo "<td>" . $rows['dia_chi'] . "</td>";
-		echo "<td>" . $rows['ma_clb'] . "</td>";
-		echo "<td>" . $rows['ma_qg'] . "</td>";
+		echo "<td>" . $rows['ten_clb'] . "</td>";
+		echo "<td>" . $rows['ten_qg'] . "</td>";
 		echo "<td>
 				<ul class='d-flex justify-content-center'>
 					<li class='mr-3'><a href='edit.php?id=" . $id . "' class='text-secondary'><i class='fa fa-edit'></i></a></li>

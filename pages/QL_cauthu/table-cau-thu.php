@@ -43,7 +43,7 @@ include('../../includes/header_admin.html');
   }
 
   .btn_add:hover {
-    background-color:#9AB87A;
+    background-color: #9AB87A;
   }
 </style>
 
@@ -102,8 +102,8 @@ include('../../includes/header_admin.html');
                             <th scope="col">Ngày sinh</th>
                             <th scope="col">Giới tính</th>
                             <th scope="col">Địa chỉ</th>
-                            <th scope="col">Mã CLB</th>
-                            <th scope="col">Mã QG</th>
+                            <th scope="col">CLB</th>
+                            <th scope="col">Quốc gia</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -112,11 +112,11 @@ include('../../includes/header_admin.html');
                           ?>
                         </tbody>
                       </table>
-                      <div align='center' class="pt_block">
-                        <?php
-                        include('phantrang.php');
-                        ?>
-                      </div>
+                    </div>
+                    <div align='center' class="pt_block">
+                      <?php
+                      include('phantrang.php');
+                      ?>
                     </div>
                   </div>
                 </div>

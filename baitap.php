@@ -14,7 +14,7 @@ include('includes/header.html');
             <ul>
                 <li>
                     <input type="checkbox" checked="checked" id="c2" />
-                    <!--checked="checked"  -->
+                    <!--checked="checked" -->
                     <label for="c2" class="tree_label">Form</label>
                     <ul>
                         <li><a href="includes/BT_NVH/BTCD3/checkbox.php"><span class="tree_label">Check box</span></a></li>
@@ -69,7 +69,7 @@ include('includes/header.html');
             </ul>
         </li>
         <li>
-        <input type="checkbox" checked="checked" id="c7" /> <!--  checked="checked" -->
+            <input type="checkbox" checked="checked" id="c7" /> <!--  checked="checked" -->
             <label class="tree_label" for="c7">Trương Minh Phi</label>
             <ul>
                 <li>
@@ -121,15 +121,15 @@ include('includes/header.html');
                     <input type="checkbox" checked="checked" id="c13" />
                     <label for="c13" class="tree_label">Database</label>
                     <ul>
-                    <li><a href="includes/BT_TMP/MySQL/BaiTapQuanLyBanSua/BaiTapMauKetNoiSQL.php"><span class="tree_label">Kết nối SQL với PHP</span></a></li>
-                    <li><a href="includes/BT_TMP/MySQL/BaiTapQuanLyBanSua/2,1.php"><span class="tree_label">Bài 2.1</span></a></li>
-                    <li><a href="includes/BT_TMP/MySQL/BaiTapQuanLyBanSua/2,2.php"><span class="tree_label">Bài 2.2</span></a></li>
-                    <li><a href="includes/BT_TMP/MySQL/BaiTapQuanLyBanSua/2,3.php"><span class="tree_label">Bài 2.3</span></a></li>
-                    <li><a href="includes/BT_TMP/MySQL/BaiTapQuanLyBanSua/2,4.php"><span class="tree_label">Bài 2.4</span></a></li>
-                    <li><a href="includes/BT_TMP/MySQL/BaiTapQuanLyBanSua/2,5.php"><span class="tree_label">Bài 2.5</span></a></li>
-                    <li><a href="includes/BT_TMP/MySQL/BaiTapQuanLyBanSua/2,6.php"><span class="tree_label">Bài 2.6</span></a></li>
-                    <li><a href="includes/BT_TMP/MySQL/BaiTapQuanLyBanSua/2,7.php"><span    class="tree_label">Bài 2.7</span></a></li>
-                   
+                        <li><a href="includes/BT_TMP/MySQL/BaiTapQuanLyBanSua/BaiTapMauKetNoiSQL.php"><span class="tree_label">Kết nối SQL với PHP</span></a></li>
+                        <li><a href="includes/BT_TMP/MySQL/BaiTapQuanLyBanSua/2,1.php"><span class="tree_label">Bài 2.1</span></a></li>
+                        <li><a href="includes/BT_TMP/MySQL/BaiTapQuanLyBanSua/2,2.php"><span class="tree_label">Bài 2.2</span></a></li>
+                        <li><a href="includes/BT_TMP/MySQL/BaiTapQuanLyBanSua/2,3.php"><span class="tree_label">Bài 2.3</span></a></li>
+                        <li><a href="includes/BT_TMP/MySQL/BaiTapQuanLyBanSua/2,4.php"><span class="tree_label">Bài 2.4</span></a></li>
+                        <li><a href="includes/BT_TMP/MySQL/BaiTapQuanLyBanSua/2,5.php"><span class="tree_label">Bài 2.5</span></a></li>
+                        <li><a href="includes/BT_TMP/MySQL/BaiTapQuanLyBanSua/2,6.php"><span class="tree_label">Bài 2.6</span></a></li>
+                        <li><a href="includes/BT_TMP/MySQL/BaiTapQuanLyBanSua/2,7.php"><span class="tree_label">Bài 2.7</span></a></li>
+
                     </ul>
                 </li>
             </ul>

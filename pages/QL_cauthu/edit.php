@@ -14,6 +14,7 @@ if (isset($_POST['update'])) {
 
     //thực thi câu lệnh sql
     $result = mysqli_query($conn, $sql);
+    
     //-----------------------------------
     $update_hoten = $_POST['hoten'];
     $update_diachi = $_POST['diachi'];
@@ -23,8 +24,12 @@ if (isset($_POST['update'])) {
     $update_gioitinh = $_POST['gioitinh'];
     $update_qg = $_POST['quocgia'];
     $update_clb = $_POST['caulacbo'];
-
-    $sql = "UPDATE cau_thu SET gioi_tinh='" . $update_gioitinh . "',ngay_sinh='" . $update_ngaysinh . "' WHERE ma_cau_thu='" . $id . "'";
+    // echo  $update_qg ." ".$update_clb;
+    //câu lệnh query update
+    $sql = "UPDATE cau_thu 
+            SET ho_ten_cau_thu='" . $update_hoten . "',vi_tri='" . $update_vitri . "', gioi_tinh='" . $update_gioitinh . "',ngay_sinh='" . $update_ngaysinh . "'
+            , dia_chi='" . $update_diachi . "',so='" . $update_soao . "', ma_clb='" . $update_clb . "',ma_qg='" . $update_qg . "'
+            WHERE ma_cau_thu='" . $id . "'";
     if (mysqli_query($conn, $sql)) {
         echo "<script>alert('Records was updated successfully.');</script>";
     } else {
@@ -182,6 +187,8 @@ include('../../includes/header_admin.html');
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="../../vendors/js/vendor.bundle.base.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <!-- endinject -->
     <!-- inject:js -->
     <script src="../../js/off-canvas.js"></script>

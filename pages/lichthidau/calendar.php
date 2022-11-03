@@ -1,8 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    include('../../includes/header_admin.html');
+include('../../includes/header_admin.html');
 ?>
+<style>
+  .kwbMAe {
+    background-color: #3c4043 !important;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .card {
+    background-color: #202124;
+  }
+
+  .card .card-title,
+  tbody {
+    color: #FFFFFF;
+  }
+
+  table,
+  th,
+  td {
+    border: none;
+  }
+</style>
+
 <body>
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
@@ -17,7 +43,7 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-        <div class="row page-titles">
+          <div class="row page-titles">
             <div class="col-md-5 align-self-center">
               <h4 class="text-themecolor">Lịch</h4>
             </div>
@@ -36,7 +62,15 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Trận đấu</h4>
-                  <canvas id="lineChart"></canvas>
+                  <div class="single-table">
+                    <div class="table-responsive">
+                      <table class="table text-center">
+                          <?php 
+                            include('xulyhienthilich.php');
+                          ?>
+                      </table>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -45,6 +79,7 @@
                 <div class="card-body">
                   <h4 class="card-title">Trận đấu</h4>
                   <canvas id="barChart"></canvas>
+
                 </div>
               </div>
             </div>
@@ -73,4 +108,5 @@
   <!-- endinject -->
 
 </body>
+
 </html>
