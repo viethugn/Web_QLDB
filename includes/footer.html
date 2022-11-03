@@ -6,15 +6,13 @@
 		padding: 0;
 		box-sizing: border-box;
 	}
-
 </style>
 </div>
 
 <div id="footer">
 	<div class="footer-content">
-		<h3>Foolish Developer</h3>
-		<p>Foolish Developer is a blog website where you will find great tutorials on web design and development. Here
-			each tutorial is beautifully described step by step with the required source code.</p>
+		<h3>Nhóm 9</h3>
+		<p>Nguyễn Việt Hưng <br> Trương Minh Phi</p>
 		<ul class="socials">
 			<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 			<li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -38,7 +36,35 @@
 			href="http://validator.w3.org/">XHTML</a>
 	</p> -->
 </div>
+</div>
+<!-- <script>
+	// add click highlight
+	var header = document.getElementById("myDIV");
+	var livs = header.getElementsByClassName("liv");
+
+	for (var i = 0; i < livs.length; i++) {
+		livs[i].addEventListener("click", function () {
+			var current = document.getElementsByClassName(" active");
+			current[0].className = current[0].className.replace(" active", "");
+			this.className += " active";
+		});
+	}
+</script> -->
 <script src="js/treelink.js"></script>
+<script>
+	$(function(){
+    // this will get the full URL at the address bar
+    var url = window.location.href; 
+
+    // passes on every "a" tag 
+    $("#navigation a").each(function() {
+            // checks if its the same on the address bar
+        if(url == (this.href)) { 
+            $(this).closest("li").addClass("active");
+        }
+    });
+});
+</script>
 </body>
 
 </html>
