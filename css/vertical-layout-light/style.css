@@ -19024,5 +19024,10 @@ div.tagsinput span.tag a {
 }
 
 /* ------------------------------calendar */
-
+/* -------------------------------table cau thu */
+.search_left{
+    width: 55%;
+    /* float: left; */
+    /* display: block; */
+}
 

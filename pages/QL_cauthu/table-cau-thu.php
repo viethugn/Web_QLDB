@@ -76,8 +76,20 @@ include('../../includes/header_admin.html');
             </div>
           </div>
           <div class="row page-titles">
-            <div class="col-md-5 align-self-center"></div>
+            <div class="col-md-5 align-self-center">
+            <div class="search_left">
+							<div class="col-md-5 col-sm-5  form-group top_search">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="Search for...">
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="button">Go!</button>
+									</span>
+								</div>
+							</div>
+						</div>
+            </div>
             <div class="col-md-7 align-self-center text-right">
+              
               <div class="d-flex justify-content-end align-items-center">
                 <div class="btn_add">
                   <a href='add.php' class="text-white"><i class="fa fa-plus"></i> Thêm cầu thủ</a>
@@ -93,6 +105,7 @@ include('../../includes/header_admin.html');
                   <h4 class="header-title"><b>Danh sách cầu thủ</b></h4>
                   <div class="single-table">
                     <div class="table-responsive ">
+
                       <table class="table table-hover progress-table text-center">
                         <thead class="text-uppercase">
                           <tr>
