@@ -18,9 +18,16 @@
   <!-- endinject -->
   <!-- <link rel="shortcut icon" href="../../images/favicon.png" /> -->
 </head>
+<style>
+  #textcolorErr {
+    color: red;
+  }
+</style>
+<?php
+include('./xulydangnhap.php');
+?>
 
 <body class="login-backgou">
-
 
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
@@ -28,40 +35,27 @@
         <div class="row w-100 mx-0">
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-
-
-
-
               <div class="brand-logo">
-                <h3><b>Xin chào, cùng bắt đầu nào!</b></h3>
+                <h3><b>Xin chào Admin, cùng bắt đầu nào!</b></h3>
               </div>
-
-
-
-              <form action="./xulydangnhap.php" method="POST" class="pt-3">
-
-
+              <form action="" method="POST" class="pt-3">
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" name="tai_khoan" placeholder="Username" required>
+                  <input type="text" class="form-control form-control-lg" name="tai_khoan" placeholder="Username" required 
+                  value="<?php echo $tai_khoan; ?>">
                 </div>
-
-
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" name="mat_khau" placeholder="Password" required>
-                  <!-- <span id="textcolorErr"><?php echo $tkErr ?></span> -->
+                  <input type="password" class="form-control form-control-lg" name="mat_khau" placeholder="Password" required
+                  value="<?php echo $mat_khau; ?>">
                 </div>
-
-
+                <div class="form-group">
+                  <span id="textcolorErr"><?php echo $tkErr ?></span>
+                </div>
                 <div class="mt-3">
-                  <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" name="dangnhap">Đăng nhập</button>
-                  
+                  <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium" name="dangnhap">Đăng nhập</button>
                 </div>
-
                 <!-- <div class="mt-3">
                   <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="register.html">Đăng ký</a>
                 </div> -->
-
-
                 <div class="my-2 d-flex justify-content-between align-items-center">
                   <div class="form-check">
                     <label class="form-check-label text-muted">
@@ -70,12 +64,7 @@
                     </label>
                   </div>
                 </div>
-
-
               </form>
-
-
-
             </div>
           </div>
         </div>
@@ -94,4 +83,5 @@
   <script src="../../js/template.js"></script>
   <!-- endinject -->
 </body>
+
 </html>

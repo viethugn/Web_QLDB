@@ -13,21 +13,22 @@ include('../header.html');
 
     .container>table {
         margin: 0 auto;
+        height: 200px;
     }
 
     table {
         border-collapse: collapse;
-        width: 80%;
+        width: 70%;
         height: auto;
-
         color: #ffff00;
-
         background-color: whitesmoke;
         text-align: center;
         border: black 3px;
 
     }
-
+    table,tr,td{
+        border: solid;
+    }
     table th {
 
         background-color: blue;
@@ -71,10 +72,10 @@ $sql = "SELECT Ten_sua,Trong_luong,Don_gia,Hinh
 $result = mysqli_query($conn, $sql);
 
 
-
+echo "<div class='container'>";
 echo "<p align='center'><font size='5' color='blue'> THÔNG TIN CÁC SẢN PHẨM</font></P>";
 
-echo "<table align='center' width='500' border='1' cellpadding='2' cellspacing='2' style='border-collapse:collapse'>";
+echo "<table align='center' width='500' border='1' cellpadding='2' >";
 
 
 
