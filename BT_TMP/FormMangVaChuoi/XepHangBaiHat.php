@@ -1,87 +1,97 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+<?php
+$page_title = 'Welcome to this Site!';
+include('../header.html');
+?>
 
-<html>
+<title>Xếp hạng bài hát</title>
 
-<head>
-
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-    <title>Xếp hạng bài hát</title>
-
-    <style type="text/css">
-        table {
-
-            color: #ffff00;
-
-            background-color: gray;
-
-        }
-
-        table th {
-
-            background-color: blue;
-
-            font-style: vni-times;
-
-            color: yellow;
-
-        }
-    </style>
-
-</head>
-
-<body>
-
-    <?php
-
-    function Add($baihat, $hang, &$arr)
-    {
-        foreach ($arr as $key => $x) {
-            if ($key == $hang) return "Hạng $key đã có!";
-        }
-        $arr[$hang] = $baihat;
-        ksort($arr);
+<style type="text/css">
+    .container {
+        background-color: #8ef1f0;
+        padding: 30px 0 30px 0;
     }
 
-    function Xuat($arr)
-    {
-        $kq = NULL;
-        foreach ($arr as $key => $x) {
-            $kq .= $key . ". " . $x . "<br>";
-        }
-        return $kq;
+    form>table {
+        margin: 0 auto;
     }
 
-    function XoaSession()
-    {
-        $_SESSION['arr'] = array();
+    tr,
+    td {
+        padding: 10px;
     }
 
-    if (session_id() === '') session_start();
+    table {
 
-    if (!isset($_SESSION["arr"])) $_SESSION["arr"] = array();
+        color: #ffff00;
 
-    $ketqua = NULL;
+        background-color: gray;
 
-    if (isset($_POST['tinh'])) {
-        if (isset($_POST['baihat']) && $_POST['baihat'] != "") {
-            if (isset($_POST['xephang'])) {
-                Add($_POST['baihat'], $_POST['xephang'], $_SESSION["arr"]);
-                $ketqua = Xuat($_SESSION["arr"]);
-            } else echo "Chưa nhập xếp hạng!";
-        } else echo "Chưa nhập bài hát!";
     }
 
-    if (isset($_POST['xoa'])) {
-        XoaSession();
+    table th {
+
+        background-color: blue;
+
+        font-style: vni-times;
+
+        color: yellow;
+
     }
+</style>
+
+
+<?php
+
+function Add($baihat, $hang, &$arr)
+{
+    foreach ($arr as $key => $x) {
+        if ($key == $hang) return "Hạng $key đã có!";
+    }
+    $arr[$hang] = $baihat;
+    ksort($arr);
+}
+
+function Xuat($arr)
+{
+    $kq = NULL;
+    foreach ($arr as $key => $x) {
+        $kq .= $key . ". " . $x . "<br>";
+    }
+    return $kq;
+}
+
+function XoaSession()
+{
+    $_SESSION['arr'] = array();
+}
+
+if (session_id() === '') session_start();
+
+if (!isset($_SESSION["arr"])) $_SESSION["arr"] = array();
+
+$ketqua = NULL;
+
+if (isset($_POST['tinh'])) {
+    if (isset($_POST['baihat']) && $_POST['baihat'] != "") {
+        if (isset($_POST['xephang'])) {
+            Add($_POST['baihat'], $_POST['xephang'], $_SESSION["arr"]);
+            $ketqua = Xuat($_SESSION["arr"]);
+        } else echo "Chưa nhập xếp hạng!";
+    } else echo "Chưa nhập bài hát!";
+}
+
+if (isset($_POST['xoa'])) {
+    XoaSession();
+}
 
 
 
-    ?>
+?>
 
 
 
+
+<div class="container">
     <form action="" method="post">
 
         <table border="0" cellpadding="10">
@@ -121,9 +131,7 @@
 
 
     </form>
-    <?php
-    include('../../backindex.html');
-    ?>
-</body>
-
-</html>
+</div>
+<?php
+include('../footer.html');
+?>

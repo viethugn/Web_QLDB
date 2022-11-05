@@ -1,74 +1,85 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+<?php
+$page_title = 'Welcome to this Site!';
+include('../header.html');
+?>
 
-<html>
+<title>Mang tim kiem va thay the</title>
 
-<head>
-
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-    <title>Mang tim kiem va thay the</title>
-
-    <style type="text/css">
-        table {
-
-            color: #ffff00;
-
-            background-color: gray;
-
-        }
-
-        table th {
-
-            background-color: blue;
-
-            font-style: vni-times;
-
-            color: yellow;
-
-        }
-    </style>
-</head>
-
-<body>
-    <?php
-
-    function tim_kiem($arr, $so, $vitri)
-    {
-        if ($arr[$vitri] == $so) {
-            return $vitri;
-        }
-        return -1;
+<style type="text/css">
+    .container {
+        background-color: #8ef1f0;
+        padding: 30px 0 30px 0;
     }
-    $str = "";
-    $str_kq = "";
-    $ketqua = "";
-    if (isset($_POST['so'])) {
-        $so = $_POST['so'];
+
+    form>table {
+        margin: 0 auto;
     }
-    if (isset($_POST['so']) && isset($_POST['tinh'])) {
-        $str = $_POST['mang'];
-        $arr = explode(",", $str);
-        $str_kq = implode(",", $arr);
+
+    tr,
+    td {
+        padding: 10px;
+    }
+
+    table {
+
+        color: #ffff00;
+
+        background-color: gray;
+
+    }
+
+    table th {
+
+        background-color: blue;
+
+        font-style: vni-times;
+
+        color: yellow;
+
+    }
+</style>
+
+<?php
+
+function tim_kiem($arr, $so, $vitri)
+{
+    if ($arr[$vitri] == $so) {
+        return $vitri;
+    }
+    return -1;
+}
+$str = "";
+$str_kq = "";
+$ketqua = "";
+if (isset($_POST['so'])) {
+    $so = $_POST['so'];
+}
+if (isset($_POST['so']) && isset($_POST['tinh'])) {
+    $str = $_POST['mang'];
+    $arr = explode(",", $str);
+    $str_kq = implode(",", $arr);
+    $brr = array();
+    $j = 0;
+    $vt = tim_kiem($arr, $so, 0);
+    echo count($brr);
+    for ($i = $vt; $i < count($arr); $i++) {
+        if (tim_kiem($arr, $so, $i) != -1) {
+            $brr[$j] = $i;
+            $j++;
+        }
+    }
+    echo count($brr);
+    if (empty($brr))
+        $ketqua = "Không tìm thấy " . $so . " trong mảng.";
+    else {
+        $ketqua = "Tìm thấy " . $so . " tại vị trí thứ " . implode(",", $brr) . " của mảng.";
         $brr = array();
-        $j = 0;
-        $vt = tim_kiem($arr, $so, 0);
-        echo count($brr);
-        for ($i = $vt; $i < count($arr); $i++) {
-            if (tim_kiem($arr, $so, $i) != -1) {
-                $brr[$j] = $i;
-                $j++;
-            }
-        }
-        echo count($brr);
-        if (empty($brr))
-            $ketqua = "Không tìm thấy " . $so . " trong mảng.";
-        else {
-            $ketqua = "Tìm thấy " . $so . " tại vị trí thứ " . implode(",", $brr) . " của mảng.";
-            $brr = array();
-        }
-        echo count($brr);
     }
-    ?>
+    echo count($brr);
+}
+?>
+
+<div class="container">
     <form action="" method="post">
         <table border="0" cellpadding="0">
             <th colspan="2">
@@ -98,10 +109,8 @@
             </tr>
         </table>
     </form>
-    <br><br>
-    <?php
-    include('../../backindex.html');
-    ?>
-</body>
+</div>
 
-</html>
+<?php
+include('../footer.html');
+?>

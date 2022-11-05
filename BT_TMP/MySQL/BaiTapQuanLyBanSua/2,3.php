@@ -1,78 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thông Tin Khách Hàng</title>
+<?php
+$page_title = 'Welcome to this Site!';
+include('../header.html');
+?>
+<title>Thông Tin Khách Hàng</title>
 
 
 
 
-    <style type="text/css">
-        table {
-            border-collapse: collapse;
-            width: 75%;
-            height: auto;
+<style type="text/css">
+    .container {
+        background-color: #8ef1f0;
+        padding: 30px 0 30px 0;
+    }
 
-            color: #ffff00;
+    .container>table {
+        margin: 0 auto;
+    }
 
-            background-color: whitesmoke;
-            text-align: center;
-            border: black 3px;
+    table {
+        border-collapse: collapse;
+        width: 75%;
+        height: auto;
 
-        }
+        color: #ffff00;
 
-        table th {
+        background-color: whitesmoke;
+        text-align: center;
+        border: black 3px;
 
-            background-color: blue;
+    }
 
-            font-style: vni-times;
+    table th {
 
-            color: yellow;
-            text-align: center;
-            height: 40px;
+        background-color: blue;
 
+        font-style: vni-times;
 
-
-        }
-
-        table td {
-
-            color: black;
-            text-align: center;
-            height: 50px;
-
-
-        }
-
-        tr:nth-child(even) {
-            background-color: gray;
-        }
-    </style>
-
-</head>
-
-<body>
+        color: yellow;
+        text-align: center;
+        height: 40px;
 
 
 
+    }
 
-    <?php
+    table td {
 
-    $manghinh = array("nam.jpg", "nu.jpg");
-    $conn = mysqli_connect('localhost', 'root', '', 'qlbansua');
-    mysqli_set_charset($conn, 'UTF8');
-    $sql = "SELECT * FROM Khach_hang";
-
-    $result = mysqli_query($conn, $sql);
+        color: black;
+        text-align: center;
+        height: 50px;
 
 
+    }
 
-    echo "<p align='center'><font size='5'> THÔNG TIN KHÁCH HÀNG</font></P>";
-    echo "<table align='center' width='700' border='1' cellpadding='2' cellspacing='2' style='border-collapse:collapse'>";
-    echo '<tr>
+    tr:nth-child(even) {
+        background-color: gray;
+    }
+</style>
+
+
+<?php
+
+$manghinh = array("nam.jpg", "nu.jpg");
+$conn = mysqli_connect('localhost', 'root', '', 'qlbansua');
+mysqli_set_charset($conn, 'UTF8');
+$sql = "SELECT * FROM Khach_hang";
+
+$result = mysqli_query($conn, $sql);
+
+
+echo "<div class='container'>";
+echo "<p align='center'><font size='5'> THÔNG TIN KHÁCH HÀNG</font></P>";
+echo "<table align='center' width='700' border='1' cellpadding='2' cellspacing='2' style='border-collapse:collapse'>";
+echo '<tr>
     <th width="50">STT</th>
     <th width="300">Mã khách hàng</th>
     <th width="600">Tên khách hàng</th>
@@ -80,38 +80,35 @@
     <th width="1000">Địa chỉ</th>
     <th width="200">Số điện thoại</th>
     </tr>';
-    if (mysqli_num_rows($result) <> 0) {
-        $stt = 1;
-        while ($rows = mysqli_fetch_row($result)) {
-            echo "<tr>";
-            echo "<td>$stt</td>";
-            echo "<td>$rows[0]</td>";
-            echo "<td>$rows[1]</td>";
-            echo "<td>";
-            if ($rows[2] == 1)
-                echo "<img src = 'Hinh_sua/nam.jpg' height= 50px width= 50px>";
-            else
-                echo "<img src = 'Hinh_sua/nu.jpg' height= 50px width= 50px>";
-            echo "</td>";
+if (mysqli_num_rows($result) <> 0) {
+    $stt = 1;
+    while ($rows = mysqli_fetch_row($result)) {
+        echo "<tr>";
+        echo "<td>$stt</td>";
+        echo "<td>$rows[0]</td>";
+        echo "<td>$rows[1]</td>";
+        echo "<td>";
+        if ($rows[2] == 1)
+            echo "<img src = 'Hinh_sua/nam.jpg' height= 50px width= 50px>";
+        else
+            echo "<img src = 'Hinh_sua/nu.jpg' height= 50px width= 50px>";
+        echo "</td>";
 
 
-            echo "<td>$rows[3]</td>";
-            echo "<td>$rows[4]</td>";
+        echo "<td>$rows[3]</td>";
+        echo "<td>$rows[4]</td>";
 
-            echo "</tr>";
-            $stt += 1;
-        }
+        echo "</tr>";
+        $stt += 1;
     }
-    echo "</table>";
+}
+echo "</table>";
+
+echo "</div>";
 
 
+?>
 
-
-    ?>
-
-
-    <link rel="stylesheet" href="../../../../includes/backindex.css" type="text/css" media="screen" />
-    <button class="button-19" role="button"><a href="../../../../baitap.php">Back Home</a></button>
-</body>
-
-</html>
+<?php
+include('../footer.html');
+?>

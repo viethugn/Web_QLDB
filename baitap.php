@@ -91,6 +91,7 @@ include('includes/header.html');
                     <label for="c11" class="tree_label">Array & String</label>
                     <ul>
                         <li><a href="BT_TMP/FormMangVaChuoi/TimNamAmLich.php"><span class="tree_label">Tìm năm âm lịch</span></a></li>
+                        <li><a href="BT_TMP/FormMangVaChuoi/TimNamNhuan.php"><span class="tree_label">Tìm năm nhuận</span></a></li>
                         <li><a href="BT_TMP/FormMangVaChuoi/TimKiemPhanTu.php"><span class="tree_label">Tìm kiếm phẩn tử trong mảng</span></a></li>
                         <li><a href="BT_TMP/FormMangVaChuoi/ThayThePhanTu.php"><span class="tree_label">Thay thế phần tử trong mảng</span></a></li>
                         <li><a href="BT_TMP/FormMangVaChuoi/ThaoTacTrenMangSoNguyen.php"><span class="tree_label">Thao tác trên mảng số nguyên</span></a></li>
@@ -105,7 +106,6 @@ include('includes/header.html');
                     <input type="checkbox" checked="checked" id="c13" />
                     <label for="c13" class="tree_label">Database</label>
                     <ul>
-                        <li><a href="BT_TMP/MySQL/BaiTapQuanLyBanSua/BaiTapMauKetNoiSQL.php"><span class="tree_label">Kết nối SQL với PHP</span></a></li>
                         <li><a href="BT_TMP/MySQL/BaiTapQuanLyBanSua/2,1.php"><span class="tree_label">Bài 2.1</span></a></li>
                         <li><a href="BT_TMP/MySQL/BaiTapQuanLyBanSua/2,2.php"><span class="tree_label">Bài 2.2</span></a></li>
                         <li><a href="BT_TMP/MySQL/BaiTapQuanLyBanSua/2,3.php"><span class="tree_label">Bài 2.3</span></a></li>

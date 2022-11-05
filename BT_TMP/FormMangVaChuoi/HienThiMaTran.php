@@ -1,96 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Ma trận dạng nhập</title>
-</head>
-
-<body>
-
-	<?php
-
-	//-- tạo mảng có NxM phần tử, các phần tử có giá trị [1,200]
-
-	if (isset($_POST['n'])) {
-		$n = $_POST['n'];
-	} else {
-		$n = 0;
+<?php
+$page_title = 'Welcome to this Site!';
+include('../header.html');
+?>
+<title>Ma trận dạng nhập</title>
+<style>
+	.container {
+		background-color: #8ef1f0;
+		padding: 30px 0 30px 0;
 	}
 
-
-	if (isset($_POST['m'])) {
-		$m = $_POST['m'];
-	} else {
-		$m = 0;
+	form>table {
+		margin: 0 auto;
 	}
 
-	//-- khởi tạo mảng 2 chiều
-	$kq = "";
+	tr,
+	td {
+		padding: 10px;
+	}
+</style>
+<?php
+
+//-- tạo mảng có NxM phần tử, các phần tử có giá trị [1,200]
+
+if (isset($_POST['n'])) {
+	$n = $_POST['n'];
+} else {
+	$n = 0;
+}
 
 
-	if (isset($_POST['hthi'])) {
+if (isset($_POST['m'])) {
+	$m = $_POST['m'];
+} else {
+	$m = 0;
+}
 
-		$arr = array();
+//-- khởi tạo mảng 2 chiều
+$kq = "";
 
-		for ($i = 0; $i < $n; $i++) {
-			for ($j = 0; $j < $m; $j++) {
-				$x = rand(1, 200);
 
-				$arr[$i][$j] = $x;
-			}
+if (isset($_POST['hthi'])) {
+
+	$arr = array();
+
+	for ($i = 0; $i < $n; $i++) {
+		for ($j = 0; $j < $m; $j++) {
+			$x = rand(1, 200);
+
+			$arr[$i][$j] = $x;
 		}
-		$kq = "Ma trận $n dòng $m cột:  &#13;&#10;";
+	}
+	$kq = "Ma trận $n dòng $m cột:  &#13;&#10;";
 
-		// -- in kết quả mảng random
-		for ($i = 0; $i < $n; $i++) {
-			for ($j = 0; $j < $m; $j++) {
+	// -- in kết quả mảng random
+	for ($i = 0; $i < $n; $i++) {
+		for ($j = 0; $j < $m; $j++) {
 
+			$kq .= $arr[$i][$j] . " ";
+		}
+		$kq .= "&#13;&#10;";
+	}
+
+
+
+	//-- Hiển thị các phần tử thuộc dòng chẵn cột lẻ
+
+
+	$kq .= "Các phần tử thuộc dòng chẵn cột lẻ:";
+	for ($i = 0; $i < $n; $i++) {
+		for ($j = 0; $j < $m; $j++) {
+			if ($i % 2 == 0 && $j % 2 != 0)
 				$kq .= $arr[$i][$j] . " ";
-			}
-			$kq .= "&#13;&#10;";
 		}
-
-
-
-
-
-
-		//-- Hiển thị các phần tử thuộc dòng chẵn cột lẻ
-
-
-		$kq .= "Các phần tử thuộc dòng chẵn cột lẻ:";
-		for ($i = 0; $i < $n; $i++) {
-			for ($j = 0; $j < $m; $j++) {
-				if ($i % 2 == 0 && $j % 2 != 0)
-					$kq .= $arr[$i][$j] . " ";
-			}
-		}
-
-
-
-
-		//-- Tổng các phần tử là bội số của 10
-		$sum = 0;
-		for ($i = 0; $i < $n; $i++) {
-			for ($j = 0; $j < $m; $j++) {
-				if ($arr[$i][$j] % 10 == 0)
-					$sum = $sum + $arr[$i][$j];
-			}
-		}
-		$kq .= "&#13;&#10;" . "Tổng giá trị các phần tử là bội số của 10 là: $sum";
 	}
 
+	//-- Tổng các phần tử là bội số của 10
+	$sum = 0;
+	for ($i = 0; $i < $n; $i++) {
+		for ($j = 0; $j < $m; $j++) {
+			if ($arr[$i][$j] % 10 == 0)
+				$sum = $sum + $arr[$i][$j];
+		}
+	}
+	$kq .= "&#13;&#10;" . "Tổng giá trị các phần tử là bội số của 10 là: $sum";
+}
 
 
 
 
-	?>
 
+?>
 
-
+<div class="container">
 	<form method="post">
 		<fieldset>
 			<legend><b>MA TRẬN DẠNG NHẬP</b></legend>
@@ -118,10 +119,8 @@
 		</fieldset>
 
 	</form>
-	<br><br>
-	<?php
-	include('../../backindex.html');
-	?>
-</body>
+</div>
 
-</html>
+<?php
+include('../footer.html');
+?>

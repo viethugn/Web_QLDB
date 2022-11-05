@@ -1,13 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <title></title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<body>
+<?php 
+$page_title = 'Welcome to this Site!';
+include('../header.html');
+?>
+<style>
+  
+.container{
+        background-color: #8ef1f0;
+        padding: 30px 0 30px 0;
+    }
+   form>table{
+        margin: 0 auto;
+    }
+ tr,td{
+            padding: 10px;
+        }
+</style>
   <?php
   $fp = @fopen("input_bai4.txt", "w+");
   if (!$fp) {
@@ -35,9 +42,7 @@
   ?>
 
 
-
-
-
+  <div class="container">
   <form action="" method="post">
     <table>
       <thead>
@@ -68,10 +73,8 @@
       </tr>
     </table>
   </form>
-  <br><br>
-  <?php
-  include('../../backindex.html');
-  ?>
-</body>
+  </div>
 
-</html>
+<?php
+include('../footer.html');
+?>

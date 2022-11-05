@@ -1,94 +1,102 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+<?php
+$page_title = 'Welcome to this Site!';
+include('../header.html');
+?>
+<title>Mảng thay thế</title>
 
-<html>
+<style type="text/css">
+    .container {
+        background-color: #8ef1f0;
+        padding: 30px 0 30px 0;
+    }
 
-<head>
+    form>table {
+        margin: 0 auto;
+    }
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    tr,
+    td {
+        padding: 10px;
+    }
 
-    <title>Mảng thay thế</title>
+    table {
 
-    <style type="text/css">
-        table {
+        color: #ffff00;
 
-            color: #ffff00;
+        background-color: gray;
 
-            background-color: gray;
+    }
 
+    table th {
+
+        background-color: blue;
+
+        font-style: vni-times;
+
+        color: yellow;
+
+    }
+</style>
+
+<?php
+
+function thay_the($arr, $socanthay)
+{
+    for ($i = 0; $i < count($arr); $i++) {
+        if ($arr[$i] == $socanthay) {
+            return $i;
         }
+    }
+    return -1;
+}
+$arr = array();
 
-        table th {
+$str = "";
+$str_cu = "";
+$str_moi = "";
+if (isset($_POST['sothay'])) {
+    $sothay = $_POST['sothay'];
+}
+if (isset($_POST['socanthay'])) {
+    $socanthay = $_POST['socanthay'];
+}
+if (isset($_POST['mang'])) {
+    $mang = $_POST['mang'];
+}
 
-            background-color: blue;
+if (isset($_POST['socanthay']) && isset($_POST['sothay']) && isset($_POST['tinh'])) {
 
-            font-style: vni-times;
-
-            color: yellow;
-
-        }
-    </style>
-</head>
-
-<body>
-
-
-    <?php
-
-    function thay_the($arr, $socanthay)
-    {
+    if (empty($_POST['mang'])) {
+        echo "<font color='red'>Bạn chưa nhập mảng</font>";
+    } elseif (empty($_POST['socanthay'])) {
+        echo "<font color='red'>Bạn chưa nhập giá trị cần thay</font>";
+    } elseif (empty($_POST['sothay'])) {
+        echo "<font color='red'>Bạn chưa nhập giá trị thay</font>";
+    } elseif (!(is_numeric($_POST['socanthay']) && is_numeric($_POST['sothay']))) {
+        echo "<font color='red'>Phải nhập số</font>";
+    } else {
+        $str = $_POST['mang'];
         for ($i = 0; $i < count($arr); $i++) {
-            if ($arr[$i] == $socanthay) {
-                return $i;
+            $brr[$i] = $arr[$i];
+        }
+        $arr = explode(",", $str);
+        $brr = explode(",", $str);
+        $str_cu = implode(",", $arr);
+
+
+        for ($i = 0; $i < count($arr); $i++) {
+            if ($brr[$i] == $socanthay) {
+                $brr[$i] = $sothay;
             }
         }
-        return -1;
+        $str_moi = implode(",", $brr);
     }
-    $arr = array();
+}
 
-    $str = "";
-    $str_cu = "";
-    $str_moi = "";
-    if (isset($_POST['sothay'])) {
-        $sothay = $_POST['sothay'];
-    }
-    if (isset($_POST['socanthay'])) {
-        $socanthay = $_POST['socanthay'];
-    }
-    if (isset($_POST['mang'])) {
-        $mang = $_POST['mang'];
-    }
-
-    if (isset($_POST['socanthay']) && isset($_POST['sothay']) && isset($_POST['tinh'])) {
-
-        if (empty($_POST['mang'])) {
-            echo "<font color='red'>Bạn chưa nhập mảng</font>";
-        } elseif (empty($_POST['socanthay'])) {
-            echo "<font color='red'>Bạn chưa nhập giá trị cần thay</font>";
-        } elseif (empty($_POST['sothay'])) {
-            echo "<font color='red'>Bạn chưa nhập giá trị thay</font>";
-        } elseif (!(is_numeric($_POST['socanthay']) && is_numeric($_POST['sothay']))) {
-            echo "<font color='red'>Phải nhập số</font>";
-        } else {
-            $str = $_POST['mang'];
-            for ($i = 0; $i < count($arr); $i++) {
-                $brr[$i] = $arr[$i];
-            }
-            $arr = explode(",", $str);
-            $brr = explode(",", $str);
-            $str_cu = implode(",", $arr);
+?>
 
 
-            for ($i = 0; $i < count($arr); $i++) {
-                if ($brr[$i] == $socanthay) {
-                    $brr[$i] = $sothay;
-                }
-            }
-            $str_moi = implode(",", $brr);
-        }
-    }
-
-    ?>
-
+<div class="container">
     <form action="" method="post">
         <table border="0" cellpadding="0">
             <th colspan="2">
@@ -122,10 +130,8 @@
             </tr>
         </table>
     </form>
-    <br><br>
-    <?php
-    include('../../backindex.html');
-    ?>
-</body>
+</div>
 
-</html>
+<?php
+include('../footer.html');
+?>

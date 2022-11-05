@@ -13,14 +13,17 @@ include('../header.html');
 	form>table {
 		margin: 0 auto;
 	}
-
+	table,td,tr{
+		padding: 10px;
+	}
+	form{
+		padding: 10px;
+	}
 	fieldset {
 
 		background-color: #eeeeee;
 
 	}
-
-
 
 	legend {
 
@@ -40,10 +43,6 @@ include('../header.html');
 
 	}
 </style>
-
-</head>
-
-<body>
 
 	<?php
 
@@ -322,9 +321,7 @@ include('../header.html');
 				</table>
 
 			</fieldset>
-
 		</form>
-
 	</div>
 	<?php
 	include('../footer.html');

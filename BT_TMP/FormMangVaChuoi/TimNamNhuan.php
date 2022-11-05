@@ -1,13 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+$page_title = 'Welcome to this Site!';
+include('../header.html');
+?>
+  <style>
+    .container{
+        background-color: #8ef1f0;
+        padding: 30px 0 30px 0;
+    }
+   form>table{
+        margin: 0 auto;
+    }
+ tr,td{
+            padding: 10px;
+        }
+  </style>
 
-<head>
-  <title></title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<body>
   <?php
   function nam_nhuan($nam)
   {
@@ -29,7 +36,8 @@
     $kq = "";
   }
   ?>
-  <form action="" method="POST">
+<div class="container">
+<form action="" method="POST">
     <fieldset>
       <legend>Tìm năm nhuận</legend>
       <label>Năm: </label>
@@ -40,9 +48,7 @@
       <input type="submit" value="Tìm năm nhuận" name="tinh">
     </fieldset>
   </form>
+</div>
   <?php
-	include('../../backindex.html');
-	?>
-</body>
-
-</html>
+include('../footer.html');
+?>

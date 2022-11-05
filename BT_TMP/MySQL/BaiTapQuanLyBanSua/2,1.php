@@ -1,63 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$page_title = 'Welcome to this Site!';
+include('../header.html');
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thông Tin Hãng Sữa</title>
+<title>Thông Tin Hãng Sữa</title>
 
 
+<style type="text/css">
+    .container {
+        background-color: #8ef1f0;
+        padding: 30px 0 30px 0;
+    }
 
+    .container>table {
+        margin: 0 auto;
+    }
 
-    <style type="text/css">
-        table {
-            border-collapse: collapse;
-            width: 75%;
-            height: auto;
+    table {
+        border-collapse: collapse;
+        width: 75%;
+        height: auto;
 
-            color: #ffff00;
+        color: #ffff00;
 
-            background-color: whitesmoke;
-            text-align: center;
-            border: black 3px;
+        background-color: whitesmoke;
+        text-align: center;
+        border: black 3px;
 
-        }
+    }
 
-        table th {
+    table th {
 
-            background-color: blue;
+        background-color: blue;
 
-            font-style: vni-times;
+        font-style: vni-times;
 
-            color: yellow;
-            text-align: center;
-            height: 40px;
-
-
-
-        }
-
-        table td {
-
-            color: black;
-            text-align: center;
-            height: 50px;
-
-
-        }
-
-        tr:nth-child(even) {
-            background-color: gray;
-        }
-    </style>
-
-</head>
-
-<body>
+        color: yellow;
+        text-align: center;
+        height: 40px;
 
 
 
+    }
+
+    table td {
+
+        color: black;
+        text-align: center;
+        height: 50px;
+
+
+    }
+
+    tr:nth-child(even) {
+        background-color: gray;
+    }
+</style>
 
     <?php
     $conn = mysqli_connect('localhost', 'root', '', 'qlbansua');
@@ -75,7 +73,7 @@
     $result = mysqli_query($conn, 'SELECT Ma_hang_sua, Ten_hang_sua, Dia_chi, Dien_thoai, Email
     FROM hang_sua LIMIT ' . $offset . ', ' . $rowsPerPage);
 
-
+    echo "<div class='container'>";
     echo "<p align='center'><font face= 'Verdana, Geneva, sans-serif'
     size='5'> THÔNG TIN HÃNG SỮA</font></P>";
     echo "<table align='center' width='700' border='1' cellpadding='2' cellspacing='2' style='border-collapse:collapse'>";
@@ -105,6 +103,7 @@
     }
     echo "</table>";
     echo "<br><br>";
+    echo "</div>";
 
 
 
@@ -162,9 +161,6 @@ Next
 
     ?>
 
-
-    <link rel="stylesheet" href="../../../../includes/backindex.css" type="text/css" media="screen" />
-    <button class="button-19" role="button"><a href="../../../../baitap.php">Back Home</a></button>
-</body>
-
-</html>
+    <?php
+    include('../footer.html');
+    ?>

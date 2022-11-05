@@ -1,103 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mảng phát sinh tính toán</title>
+<?php
+$page_title = 'Welcome to this Site!';
+include('../header.html');
+?>
+<title>Mảng phát sinh tính toán</title>
 
 
 
-    <style type="text/css">
-        table {
-
-            color: #ffff00;
-
-            background-color: gray;
-
-        }
-
-        table th {
-
-            background-color: blue;
-
-            font-style: vni-times;
-
-            color: yellow;
-
-        }
-    </style>
-
-
-</head>
-
-
-<body>
-    <?php
-    $mang = array();
-    $mangkq = "";
-    $max = "";
-    $min = "";
-    $tong = "";
-    function tao_mang($n)
-    {
-        for ($i = 0; $i < $n; $i++) {
-            $mang[$i] = rand(1, 100);
-        }
-        return $mang;
-    }
-    function xuat_mang($mang)
-    {
-        $n = count($mang);
-        $chuoi = "";
-        for ($i = 0; $i < $n; $i++) {
-            $chuoi = implode(" ", $mang);
-        }
-        return $chuoi;
+<style type="text/css">
+    .container {
+        background-color: #8ef1f0;
+        padding: 30px 0 30px 0;
     }
 
-    function tim_max($mang)
-    {
-        $n = count($mang);
-        $max = $mang[0];
-        for ($i = 0; $i < $n; $i++) {
-            if ($mang[$i] > $max)
-                $max = $mang[$i];
-        }
-        return $max;
+    form>table {
+        margin: 0 auto;
     }
 
-    function tim_min($mang)
-    {
-        $n = count($mang);
-        $min = $mang[0];
-        for ($i = 0; $i < $n; $i++) {
-            if ($mang[$i] < $min)
-                $min = $mang[$i];
-        }
-        return $min;
+    tr,
+    td {
+        padding: 10px;
     }
 
-    function tong_mang($mang)
-    {
-        $n = count($mang);
-        $tong = 0;
-        for ($i = 0; $i < $n; $i++) {
-            $tong += $mang[$i];
-        }
-        return $tong;
+    table {
+
+        color: #ffff00;
+
+        background-color: gray;
+
     }
 
-    if (isset($_POST['n'])) {
-        $n = $_POST['n'];
-        $mang = tao_mang($n);
-        $mangkq = xuat_mang($mang);
-        $max = tim_max($mang);
-        $min = tim_min($mang);
-        $tong = tong_mang($mang);
-    } else $n = "";
+    table th {
 
-    ?>
+        background-color: blue;
+
+        font-style: vni-times;
+
+        color: yellow;
+
+    }
+</style>
+
+<?php
+$mang = array();
+$mangkq = "";
+$max = "";
+$min = "";
+$tong = "";
+function tao_mang($n)
+{
+    for ($i = 0; $i < $n; $i++) {
+        $mang[$i] = rand(1, 100);
+    }
+    return $mang;
+}
+function xuat_mang($mang)
+{
+    $n = count($mang);
+    $chuoi = "";
+    for ($i = 0; $i < $n; $i++) {
+        $chuoi = implode(" ", $mang);
+    }
+    return $chuoi;
+}
+
+function tim_max($mang)
+{
+    $n = count($mang);
+    $max = $mang[0];
+    for ($i = 0; $i < $n; $i++) {
+        if ($mang[$i] > $max)
+            $max = $mang[$i];
+    }
+    return $max;
+}
+
+function tim_min($mang)
+{
+    $n = count($mang);
+    $min = $mang[0];
+    for ($i = 0; $i < $n; $i++) {
+        if ($mang[$i] < $min)
+            $min = $mang[$i];
+    }
+    return $min;
+}
+
+function tong_mang($mang)
+{
+    $n = count($mang);
+    $tong = 0;
+    for ($i = 0; $i < $n; $i++) {
+        $tong += $mang[$i];
+    }
+    return $tong;
+}
+
+if (isset($_POST['n'])) {
+    $n = $_POST['n'];
+    $mang = tao_mang($n);
+    $mangkq = xuat_mang($mang);
+    $max = tim_max($mang);
+    $min = tim_min($mang);
+    $tong = tong_mang($mang);
+} else $n = "";
+
+?>
+
+<div class="container">
     <form action="" method="post">
         <table>
             <tr>
@@ -134,10 +143,8 @@
             </tr>
         </table>
     </form>
-    <br><br>
-    <?php
-    include('../../backindex.html');
-    ?>
-</body>
+</div>
 
-</html>
+<?php
+include('../footer.html');
+?>
