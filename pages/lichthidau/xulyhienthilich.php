@@ -1,11 +1,11 @@
-<?php
+<!-- <?php
 echo "<tbody>";
 echo "<tr>
         <td class='BAX2sc' colspan='6'>Thông báo</td>
     </tr>";
 echo "";
 echo  "</tbody>";
-?>
+?> -->
 <tbody>
     <!-- <tr class="S6bEgc"></tr> -->
     <tr>

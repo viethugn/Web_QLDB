@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,11 +13,13 @@
   <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
+
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
   <!-- endinject -->
   <!-- <link rel="shortcut icon" href="../../images/favicon.png" /> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <style>
   #textcolorErr {
@@ -30,7 +33,7 @@ include('./xulydangnhap.php');
 <body class="login-backgou">
 
   <div class="container-scroller">
-    <div class="container-fluid page-body-wrapper full-page-wrapper">
+    <div class="container-fluid page-body-wrapper full-page-wrapper login_admin">
       <div class="content-wrapper d-flex align-items-center auth px-0">
         <div class="row w-100 mx-0">
           <div class="col-lg-4 mx-auto">
@@ -40,12 +43,10 @@ include('./xulydangnhap.php');
               </div>
               <form action="" method="POST" class="pt-3">
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" name="tai_khoan" placeholder="Username" required 
-                  value="<?php echo $tai_khoan; ?>">
+                  <input type="text" class="form-control form-control-lg" name="tai_khoan" placeholder="Username" required value="<?php echo $tai_khoan; ?>">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" name="mat_khau" placeholder="Password" required
-                  value="<?php echo $mat_khau; ?>">
+                  <input type="password" class="form-control form-control-lg" name="mat_khau" placeholder="Password" required value="<?php echo $mat_khau; ?>">
                 </div>
                 <div class="form-group">
                   <span id="textcolorErr"><?php echo $tkErr ?></span>
@@ -53,9 +54,6 @@ include('./xulydangnhap.php');
                 <div class="mt-3">
                   <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium" name="dangnhap">Đăng nhập</button>
                 </div>
-                <!-- <div class="mt-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="register.html">Đăng ký</a>
-                </div> -->
                 <div class="my-2 d-flex justify-content-between align-items-center">
                   <div class="form-check">
                     <label class="form-check-label text-muted">
@@ -65,6 +63,9 @@ include('./xulydangnhap.php');
                   </div>
                 </div>
               </form>
+              <!-- <p>Admin demo test: </p>
+              <p>TK:nvh</p>
+              <p>MK:000</p> -->
             </div>
           </div>
         </div>
@@ -75,6 +76,9 @@ include('./xulydangnhap.php');
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="../../vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- inject:js -->

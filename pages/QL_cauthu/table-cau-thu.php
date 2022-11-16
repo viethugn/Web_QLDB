@@ -8,34 +8,44 @@ include('../../includes/header_admin.html');
 
 <style>
   .div_pt {
-    width: auto;
-    height: auto;
-    display: inline-block;
+    /* width: auto;
+    height: auto; */
+    display: flex;
     margin-top: 10px;
     text-align: center;
   }
 
-  .div_pt>a,
-  .div_pt>.active_bg {
-    /* border: 0.5px solid grey; */
-    padding: 10px 15px;
+
+  span.page-link {
+    margin-top: 30px;
+    cursor: pointer;
+    background: gainsboro;
+    padding: 10px;
+    font-size: 16px;
+    margin: 5px;
     border-radius: 5px;
-    text-decoration: none;
   }
 
-  .active_bg {
+  .pagination {
+    justify-content: center;
+  }
+  span.page-link.avtivee {
     background-color: #9AB87A;
-  }
+}
+  
 
-  .div_pt>a:hover {
+  #pagigation li:hover {
     background-color: grey;
+    color: #48ea7c;
   }
 
+  /* btn thêm */
   .btn_add {
     border: 0.5px solid grey;
     background-color: #4B49AC;
     padding: 10px 15px;
     border-radius: 5px;
+    width: 149px;
   }
 
   .btn_add>a {
@@ -62,10 +72,10 @@ include('../../includes/header_admin.html');
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row page-titles">
-            <div class="col-md-5 align-self-center">
+            <div class="col-md-5 col-sm-6 col-xs-6  align-self-center">
               <h4 class="text-themecolor">Cầu thủ</h4>
             </div>
-            <div class="col-md-7 align-self-center text-right">
+            <div class="col-md-7 col-sm-6 col-xs-6 align-self-center text-right">
               <div class="d-flex justify-content-end align-items-center">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="../../pages/samples/index_admin.php">Home</a></li>
@@ -76,21 +86,23 @@ include('../../includes/header_admin.html');
             </div>
           </div>
           <div class="row page-titles">
-            <div class="col-md-5 align-self-center">
-            <div class="search_left">
-							<div class="col-md-5 col-sm-5  form-group top_search">
-								<div class="input-group">
-									<input type="text" class="form-control" placeholder="Search for...">
-									<span class="input-group-btn">
-										<button class="btn btn-default" type="button">Go!</button>
-									</span>
-								</div>
-							</div>
-						</div>
+            <div class="col-md-5 col-sm-6 col-xs-6 align-self-center">
+              <div class="d-flex align-items-center">
+                <div class="input-group">
+                  <input type="text" id="textSearch" class="form-control ipt_timkiem_ct" placeholder="Search for...">
+                  <div class="input-group-append">
+                    <button id="btnSearch" class="btn btn-secondary ipt_bg_left_search" type="button">
+                      <i class="fa fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-md-7 align-self-center text-right">
-              
+            <div class="col-md-7 col-sm-6 col-xs-6 align-self-center text-right">
               <div class="d-flex justify-content-end align-items-center">
+                <!-- <div class="btn_ds">
+                  <a href='' class="text-white" >Danh sách</a>
+                </div> -->
                 <div class="btn_add">
                   <a href='add.php' class="text-white"><i class="fa fa-plus"></i> Thêm cầu thủ</a>
                 </div>
@@ -103,34 +115,8 @@ include('../../includes/header_admin.html');
               <div class="card">
                 <div class="card-body">
                   <h4 class="header-title"><b>Danh sách cầu thủ</b></h4>
-                  <div class="single-table">
-                    <div class="table-responsive ">
+                  <div id="get_data" class="single-table">
 
-                      <table class="table table-hover progress-table text-center">
-                        <thead class="text-uppercase">
-                          <tr>
-                            <th scope="col">Mã cầu thủ</th>
-                            <th scope="col">Họ tên</th>
-                            <th scope="col">Vị trí</th>
-                            <th scope="col">Ngày sinh</th>
-                            <th scope="col">Giới tính</th>
-                            <th scope="col">Địa chỉ</th>
-                            <th scope="col">CLB</th>
-                            <th scope="col">Quốc gia</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <?php
-                          include('xulyhienthicauthu.php');
-                          ?>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div align='center' class="pt_block">
-                      <?php
-                      include('phantrang.php');
-                      ?>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -138,6 +124,7 @@ include('../../includes/header_admin.html');
             <!-- Progress Table end -->
           </div>
         </div>
+
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
         <?php
@@ -158,6 +145,28 @@ include('../../includes/header_admin.html');
   <script src="../../js/hoverable-collapse.js"></script>
   <script src="../../js/template.js"></script>
 
+  <script type="text/javascript">
+      function fetch_data(page) {
+        $.ajax({
+          url: 'pagination.php',
+          type: 'POST',
+          data: {
+            page: page,
+          },
+          success: function(data) {
+            $('#get_data').html(data);
+          }
+        })
+      }
+      fetch_data();
+
+      $(document).on('click', '.page-item', function() {
+        var page = $(this).attr("id");
+        // alert (page);
+        fetch_data(page);
+      });
+
+  </script>
 </body>
 
 </html>

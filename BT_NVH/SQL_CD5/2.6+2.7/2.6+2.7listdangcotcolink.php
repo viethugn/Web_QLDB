@@ -81,7 +81,7 @@ include('../header.html');
 	//vị trí của mẩu tin đầu tiên trên mỗi trang
 	$offset = ($_GET['page'] - 1) * $rowsPerPage;
 
-	$sql = 'select Hinh,ten_sua,loai_sua.Ten_loai,TP_Dinh_Duong,Loi_ich,hang_sua.Ten_hang_sua,Trong_luong,Don_gia 
+	$sql = 'select Hinh,Ten_sua,loai_sua.Ten_loai,TP_Dinh_Duong,Loi_ich,hang_sua.Ten_hang_sua,Trong_luong,Don_gia 
 	from sua,loai_sua,hang_sua 
     where sua.Ma_loai_sua = loai_sua.Ma_loai_sua and sua.Ma_hang_sua = hang_sua.Ma_hang_sua  
     LIMIT ' . $offset . ', ' . $rowsPerPage;
@@ -97,7 +97,7 @@ include('../header.html');
 	if (mysqli_num_rows($result) <> 0) {
 		$i = 5;
 		while ($rows = mysqli_fetch_array($result)) {
-			$tensua = $rows['ten_sua'];
+			$tensua = $rows['Ten_sua'];
 			$trongluong = $rows['Trong_luong'] . " gr";
 			$tpdinhduong = $rows['TP_Dinh_Duong'];
 			$loiich = $rows['Loi_ich'];
@@ -116,7 +116,7 @@ include('../header.html');
 					<p id="margintop_tensua">
 					<a href="hienthithongtin.php?tensua=' . $tensua . '&trongluong=' . $trongluong . '&tpdinhduong
 					=' . $tpdinhduong . '&dongia=' . $dongia . '&loiich=' . $loiich . '&tenhangsua=' . $tenhangsua . '&hinh=' . $hinh . '" >
-						<b>' . $rows['ten_sua'] . '</b>
+						<b>' . $rows['Ten_sua'] . '</b>
 					</a>
 					</p>
 					<p id="marginbot_nsx">

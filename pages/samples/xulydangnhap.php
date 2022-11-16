@@ -1,4 +1,6 @@
 <?php
+// Start the session
+session_start();
 
 include('conect_database.php');
 $tkErr = "";
@@ -9,8 +11,8 @@ $result = mysqli_query($conn, $sql);
 
 //Khai báo sử dụng session
 
-session_start();
-
+$tai_khoan = "";
+$mat_khau = "";
 //Xử lý đăng nhập
 if (isset($_POST['dangnhap'])) {
 
@@ -21,43 +23,37 @@ if (isset($_POST['dangnhap'])) {
   $flag = 0;
 
   //Kiểm tra tên đăng nhập có tồn tại không
-  $query = mysqli_query($conn, "SELECT tai_khoan, mat_khau FROM ad_min WHERE tai_khoan='$tai_khoan'");
+  $query = mysqli_query($conn, "SELECT * FROM admin where tai_khoan ='".$tai_khoan."' AND mat_khau ='".$mat_khau."'");
+
   if (mysqli_num_rows($query) <> 0) {
+
     //Lấy tài khoản, mật khẩu trong database ra
     $rows = mysqli_fetch_array($query);
-    //Kiểm tra tài khoản có trùng khớp hay không
-    if ($tai_khoan != $rows['tai_khoan']) {
+
+    //Kiểm tra tài khoản, mật khẩu có trùng khớp hay không
+    if ($tai_khoan != $rows['tai_khoan'] || $mat_khau != $rows['mat_khau']) {
+
       $tkErr = "Tài khoản hoặc mật khẩu sai. Vui lòng kiểm tra lại!";
+
       $flag = 1;
-      
+    } else {
+      $hoten = "";
+
+      $hoten = $rows["ho_ten"];
+
+      $_SESSION["name"] = $hoten;
     }
-    //Kiểm tra mật khẩu có trùng khớp hay không
-    if ($mat_khau != $rows['mat_khau']) {
-      $tkErr = "Tài khoản hoặc mật khẩu sai. Vui lòng kiểm tra lại!";
-      $flag = 1;
-    }
-  } 
-  else {
-    $tkErr = "Tài khoản hoặc mật khẩu sai. Vui lòng kiểm tra lại!";
+  } else {
+
+    $tkErr = "Không thể kết nối được với cơ sở dữ liệu!";
+
     $flag = 1;
   }
-  if($flag != 1){
-    // $flag = 0;
+  if (($flag != 1) && (isset($_SESSION["name"]))) {
+
     header("location:index_admin.php");
   }
-  // else{
-  //   echo "<script>alert('hung')</script>";
-  // }
 }
 
-
-
-
-  // //Lưu tên đăng nhập
-  // $_SESSION['tai_khoan'] = $tai_khoan;
-  // echo "Xin chào " . $tai_khoan . ". Bạn đã đăng nhập thành công. <a href='index_admin.php'>Về trang chủ</a>";
-  // die();
-
-
-  // đóng csdl
-  $conn->close();
+// đóng csdl
+$conn->close();
