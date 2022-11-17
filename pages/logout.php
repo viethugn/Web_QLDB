@@ -4,6 +4,6 @@ session_start();
 
 unset($_SESSION["name"]);
 
-header("Location:../samples/login.php");
+header("Location:./samples/login.php");
 
 ?>
