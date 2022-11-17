@@ -11159,7 +11159,7 @@ code {
 }
 
 .card.tale-bg {
-  background: #DAE7FF;
+  background: #c1d7ff;
 }
 
 .card.transparent {
@@ -18865,8 +18865,20 @@ div.tagsinput span.tag a {
 #owl-demo .item img{
   display: block;
   width: 100%;
+  border: 0.5px solid #f6e84e;
 }
 
 #owl-demo .item img{
   height: 300px;
+}
+.owl-theme .owl-dots .owl-dot span{
+  width: 30px;
+  height: 3px;
+  border-radius: 25px;
+  background: #fafafa;
+  border: 0.5px solid;
+}
+.owl-theme .owl-dots{
+  text-align: right;
+  margin-right: 50px;
 }

@@ -61,6 +61,7 @@
   <script src="../../js/off-canvas.js"></script>
   <script src="../../js/hoverable-collapse.js"></script>
   <script src="../../js/template.js"></script>
-
+  <script src="../../js/name_admin.js"></script>
+  
 </body>
 </html>

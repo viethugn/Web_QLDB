@@ -101,7 +101,7 @@ include('../../includes/header_admin.html');
   <script src="../../js/hoverable-collapse.js"></script>
   <script src="../../js/template.js"></script>
   <!-- endinject -->
-
+  <script src="../../js/name_admin.js"></script>
 </body>
 
 </html>

@@ -80,7 +80,7 @@ include('../../includes/header_admin.html');
             </div>
           </div>
           <div class="row">
-            <div class="col-md-7 grid-margin stretch-card">
+            <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <p class="card-title mb-0">Lương</p>
@@ -154,66 +154,6 @@ include('../../includes/header_admin.html');
                         </tr>
                       </tbody>
                     </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-5 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">To Do Lists</h4>
-                  <div class="list-wrapper pt-2">
-                    <ul class="d-flex flex-column-reverse todo-list todo-list-custom">
-                      <li>
-                        <div class="form-check form-check-flat">
-                          <label class="form-check-label">
-                            <input class="checkbox" type="checkbox">
-                            Meeting with Urban Team
-                          </label>
-                        </div>
-                        <i class="remove ti-close"></i>
-                      </li>
-                      <li class="completed">
-                        <div class="form-check form-check-flat">
-                          <label class="form-check-label">
-                            <input class="checkbox" type="checkbox" checked>
-                            Duplicate a project for new customer
-                          </label>
-                        </div>
-                        <i class="remove ti-close"></i>
-                      </li>
-                      <li>
-                        <div class="form-check form-check-flat">
-                          <label class="form-check-label">
-                            <input class="checkbox" type="checkbox">
-                            Project meeting with CEO
-                          </label>
-                        </div>
-                        <i class="remove ti-close"></i>
-                      </li>
-                      <li class="completed">
-                        <div class="form-check form-check-flat">
-                          <label class="form-check-label">
-                            <input class="checkbox" type="checkbox" checked>
-                            Follow up of team zilla
-                          </label>
-                        </div>
-                        <i class="remove ti-close"></i>
-                      </li>
-                      <li>
-                        <div class="form-check form-check-flat">
-                          <label class="form-check-label">
-                            <input class="checkbox" type="checkbox">
-                            Level up for Antony
-                          </label>
-                        </div>
-                        <i class="remove ti-close"></i>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="add-items d-flex mb-0 mt-2">
-                    <input type="text" class="form-control todo-list-input" placeholder="Add new task">
-                    <button class="add btn btn-icon text-primary todo-list-add-btn bg-transparent"><i class="icon-circle-plus"></i></button>
                   </div>
                 </div>
               </div>
@@ -465,6 +405,7 @@ include('../../includes/header_admin.html');
   <script src="../../js/off-canvas.js"></script>
   <script src="../../js/hoverable-collapse.js"></script>
   <script src="../../js/template.js"></script>
+  <script src="../../js/name_admin.js"></script>
 
   <!-- Include js plugin -->
   <script src="../../OwlCarousel2-2.3.4/dist//owl.carousel.min.js"></script>
@@ -482,7 +423,7 @@ include('../../includes/header_admin.html');
         //autoplay
         loop: true, //lặp
         autoplay: true, //tự động chuyển slide
-        autoplayTimeout: 2000, //khoảng thời gian để chuyên slide
+        autoplayTimeout: 5000, //khoảng thời gian để chuyên slide
         autoplayHoverPause: true, //để trỏ vào slide dừng tự động chuyển
         //--------default
         items: 2,
@@ -492,6 +433,21 @@ include('../../includes/header_admin.html');
         itemsMobile: false,
         margin: 20,
         stagePadding: 20,
+        responsive: {
+          0: {
+            items: 1,
+            nav: false
+          },
+          600: {
+            items: 2,
+            nav: false
+          },
+          1000: {
+            items: 2,
+            nav: false
+          }
+
+        }
       });
 
     });

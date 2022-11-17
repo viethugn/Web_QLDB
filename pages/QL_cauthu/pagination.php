@@ -3,7 +3,7 @@
 include('../samples/conect_database.php');
 
 $rowsPerPage = 5; //số mẩu tin trên mỗi trang
-
+$search = $_POST['search'] ? $_POST['search'] : "" ; 
 $data = '';
 
 $page = isset($_POST['page']) ? (int)$_POST['page'] : 1;
@@ -13,7 +13,15 @@ $offset = ($page - 1) * $rowsPerPage;
 
 $sql = "SELECT ma_cau_thu, ho_ten_cau_thu, vi_tri, ngay_sinh, gioi_tinh, dia_chi,cau_lac_bo.ten_clb,quoc_gia.ten_qg
 from cau_thu, cau_lac_bo, quoc_gia
-where cau_thu.ma_clb = cau_lac_bo.ma_clb and cau_thu.ma_qg = quoc_gia.ma_qg LIMIT $offset , $rowsPerPage";
+where cau_thu.ma_clb = cau_lac_bo.ma_clb and cau_thu.ma_qg = quoc_gia.ma_qg AND 
+(LOWER(ho_ten_cau_thu) LIKE LOWER('%$search%') 
+or LOWER(ten_clb) LIKE LOWER('%$search%') 
+or LOWER(vi_tri) LIKE LOWER('%$search%')
+or LOWER(ngay_sinh) LIKE LOWER('%$search%')
+or LOWER(gioi_tinh) LIKE LOWER('%$search%')
+or LOWER(dia_chi) LIKE LOWER('%$search%')
+or LOWER(ten_clb) LIKE LOWER('%$search%')
+or LOWER(ten_qg) LIKE LOWER('%$search%')) LIMIT $offset , $rowsPerPage";
 
 $data .= "
 			<div class='table-responsive'>
@@ -40,7 +48,7 @@ if (mysqli_num_rows($result) <> 0) {
 		$data .= "<td>" . ucfirst($rows['ma_cau_thu']) . "</td>";
 		$data .= "<td>" . ucfirst($rows['ho_ten_cau_thu']) . "</td>";
 		$data .= "<td>" . ucfirst($rows['vi_tri']) . "</td>";
-		$data .= "<td>" . $rows['ngay_sinh'] . "</td>";
+		$data .= "<td>" . date("d-m-Y", strtotime($rows['ngay_sinh'])) . "</td>";
 		$data .= "<td>" . ucfirst($rows['gioi_tinh']) . "</td>";
 		$data .= "<td>" . ucfirst($rows['dia_chi']) . "</td>";
 		$data .= "<td>" . ucfirst($rows['ten_clb']) . "</td>";

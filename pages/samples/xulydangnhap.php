@@ -52,6 +52,7 @@ if (isset($_POST['dangnhap'])) {
   if (($flag != 1) && (isset($_SESSION["name"]))) {
 
     header("location:index_admin.php");
+    
   }
 }
 

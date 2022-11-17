@@ -7,14 +7,9 @@ include('../../includes/header_admin.html');
 ?>
 
 <style>
-  .div_pt {
-    /* width: auto;
-    height: auto; */
-    display: flex;
+  ul.pagination {
     margin-top: 10px;
-    text-align: center;
   }
-
 
   span.page-link {
     margin-top: 30px;
@@ -22,17 +17,18 @@ include('../../includes/header_admin.html');
     background: gainsboro;
     padding: 10px;
     font-size: 16px;
-    margin: 5px;
+    margin: 1px;
     border-radius: 5px;
   }
 
   .pagination {
     justify-content: center;
   }
+
   span.page-link.avtivee {
     background-color: #9AB87A;
-}
-  
+  }
+
 
   #pagigation li:hover {
     background-color: grey;
@@ -89,7 +85,7 @@ include('../../includes/header_admin.html');
             <div class="col-md-5 col-sm-6 col-xs-6 align-self-center">
               <div class="d-flex align-items-center">
                 <div class="input-group">
-                  <input type="text" id="textSearch" class="form-control ipt_timkiem_ct" placeholder="Search for...">
+                  <input type="text" id="textSearch" class="form-control ipt_timkiem_ct" placeholder="Search for name...">
                   <div class="input-group-append">
                     <button id="btnSearch" class="btn btn-secondary ipt_bg_left_search" type="button">
                       <i class="fa fa-search"></i>
@@ -144,28 +140,45 @@ include('../../includes/header_admin.html');
   <script src="../../js/off-canvas.js"></script>
   <script src="../../js/hoverable-collapse.js"></script>
   <script src="../../js/template.js"></script>
-
+  <script src="../../js/name_admin.js"></script>
+  <!-- ----------------hiển table + pagination------------- -->
   <script type="text/javascript">
-      function fetch_data(page) {
-        $.ajax({
-          url: 'pagination.php',
-          type: 'POST',
-          data: {
-            page: page,
-          },
-          success: function(data) {
-            $('#get_data').html(data);
-          }
-        })
-      }
-      fetch_data();
 
-      $(document).on('click', '.page-item', function() {
-        var page = $(this).attr("id");
-        // alert (page);
-        fetch_data(page);
-      });
+    let search;
 
+    $(document).ready(function() {
+
+      $('#btnSearch').click();
+
+    });
+
+    function fetch_data(search, page) {
+      $.ajax({
+        url: 'pagination.php',
+        type: 'POST',
+        data: {
+          search: search,
+          page: page,
+        },
+        success: function(data) {
+          $('#get_data').html(data);
+        }
+      })
+    }
+
+    fetch_data();
+
+    $('#btnSearch').click(function() {
+      let search = $('#textSearch').val().trim();
+      // alert("Hưng");
+      fetch_data(search);
+    });
+
+    $(document).on('click', '.page-item', function() {
+      var page = $(this).attr("id");
+      let search = $('#textSearch').val().trim();
+      fetch_data(search, page);
+    });
   </script>
 </body>
 

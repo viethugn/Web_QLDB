@@ -29,21 +29,6 @@
       <li class="nav-item nav-profile dropdown">
         <a class="nav-link dropdown-toggle" class="navbar_navitem_navlink_admin" href="#">
           <span id="name_admin"></span>
-          <script>
-            $(document).ready(function() {
-              getresult();
-            });
-          
-            function getresult() {
-              $.ajax({
-                url: 'name_admin.php',
-                type: "POST",
-                success: function(data) {
-                  $("#name_admin").append(data);
-                },
-              });
-            }
-          </script>
         </a>
       </li>
       <li class="nav-item nav-settings dropdown d-none d-lg-flex">
@@ -62,9 +47,8 @@
         </div>
       </li>
     </ul>
-    <!-- <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
       <span class="icon-menu"></span>
-    </button> -->
+    </button>
   </div>
 </nav>
-
