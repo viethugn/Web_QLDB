@@ -170,13 +170,21 @@ include('../../includes/header_admin.html');
 
     $('#btnSearch').click(function() {
       let search = $('#textSearch').val().trim();
-      // alert("Hưng");
+     
       fetch_data(search);
+    });
+
+    $("#textSearch").on('keypress', function(e) {
+      if (e.which === 13) {
+        $('#btnSearch').click();
+      }
     });
 
     $(document).on('click', '.page-item', function() {
       var page = $(this).attr("id");
+
       let search = $('#textSearch').val().trim();
+      
       fetch_data(search, page);
     });
   </script>

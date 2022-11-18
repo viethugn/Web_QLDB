@@ -5,12 +5,6 @@ session_start();
 include('conect_database.php');
 $tkErr = "";
 
-$sql = "SELECT * FROM  ad_min";
-
-$result = mysqli_query($conn, $sql);
-
-//Khai báo sử dụng session
-
 $tai_khoan = "";
 $mat_khau = "";
 //Xử lý đăng nhập
@@ -38,15 +32,18 @@ if (isset($_POST['dangnhap'])) {
       $flag = 1;
     } else {
       $hoten = "";
-
+      $id = "";
+      
+      $id = $rows["admin_id"];
       $hoten = $rows["ho_ten"];
-
+    
+      $_SESSION["id"] = $id;
       $_SESSION["name"] = $hoten;
+      
     }
-  } else {
+  }else {
 
-    $tkErr = "Không thể kết nối được với cơ sở dữ liệu!";
-
+    $tkErr = "Tài khoản hoặc mật khẩu sai. Vui lòng kiểm tra lại!";
     $flag = 1;
   }
   if (($flag != 1) && (isset($_SESSION["name"]))) {

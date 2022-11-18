@@ -4,9 +4,12 @@
 include('../samples/conect_database.php');
 
 $hoten = $diachi = $soao = $ngaysinh = $vitri  = $quocgia = $caulacbo = $gioitinh = "";
+
 $update_hoten = $update_diachi = $update_soao =  $update_vitri = $update_ngaysinh = $update_gioitinh = $update_qg = $update_clb = "";
+
 $update_hotenErr = $update_diachiErr = $update_soaoErr =  $update_vitriErr
     = $update_ngaysinhErr = $update_gioitinhErr = $update_qgErr = $update_clbErr = "";
+
 if (isset($_POST['update'])) {
     // // Get URL parameter
     $id = trim($_GET["id"]);
@@ -24,18 +27,20 @@ if (isset($_POST['update'])) {
     $update_gioitinh = $_POST['gioitinh'];
     $update_qg = $_POST['quocgia'];
     $update_clb = $_POST['caulacbo'];
-    // echo  $update_qg ." ".$update_clb;
+   
     //câu lệnh query update
     $sql = "UPDATE cau_thu 
             SET ho_ten_cau_thu='" . $update_hoten . "',vi_tri='" . $update_vitri . "', gioi_tinh='" . $update_gioitinh . "',ngay_sinh='" . $update_ngaysinh . "'
             , dia_chi='" . $update_diachi . "',so='" . $update_soao . "', ma_clb='" . $update_clb . "',ma_qg='" . $update_qg . "'
             WHERE ma_cau_thu='" . $id . "'";
+
     if (mysqli_query($conn, $sql)) {
         echo "<script>alert('Records was updated successfully.');</script>";
     } else {
         echo "<script>alert('ERROR: Could not able to execute');</script>";
         // echo "ERROR: Could not able to execute $sql. ". mysqli_error($conn);
     }
+    //sau khi nhấn cập nhật dữ liệu, dữ liệu update sẽ truyền lên lại form
     if (mysqli_num_rows($result) <> 0) {
         while ($rows = mysqli_fetch_array($result)) {
             $hoten = $rows['ho_ten_cau_thu'];
@@ -49,7 +54,7 @@ if (isset($_POST['update'])) {
         }
     }
 }
-//check tham số được truyền trên url
+//lấy giá trị id trên url để đưa dữ liệu cầu thủ lên form
 if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
     // // Get URL parameter
     $id = trim($_GET["id"]);

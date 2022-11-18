@@ -16617,9 +16617,25 @@ div.tagsinput span.tag a {
   background: url("../../images/auth/login-bg.jpg");
   background-size: cover;
 }
+
+.input_form_login:focus-within {
+  box-shadow: 0 10px 16px #c7c7c7;
+  top: 45%;
+}
+
+.input_holder_show:placeholder-shown {
+  border-left: 5px solid red;
+}
+
+.input_holder_show:not(:placeholder-shown) {
+  border-left: 5px solid green;
+}
+
 .container-fluid.login_admin{
   padding: 0;
 }
+
+
 .auth .register-half-bg {
   background: url("../../images/auth/register-bg.jpg");
   background-size: cover;
@@ -18881,4 +18897,9 @@ div.tagsinput span.tag a {
 .owl-theme .owl-dots{
   text-align: right;
   margin-right: 50px;
+}
+
+/* ----------------------admin-đổi mật khẩu */
+.btn_bg_doimk_admin{
+  background: #3c97fb;
 }

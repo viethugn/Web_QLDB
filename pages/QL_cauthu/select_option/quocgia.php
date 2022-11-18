@@ -7,9 +7,10 @@ $result = mysqli_query($conn, $sql_qg);
 
 
 if (mysqli_num_rows($result) <> 0) {
-    echo "<select name='quocgia' class='form-select'>";
+    echo "<select name='quocgia' class='form-select form-control form-control-lg'>";
     while ($rows = $result->fetch_assoc()) {
-        if ($rows['ma_qg'] == $quocgia) {
+        //nếu có mã quốc gia trùng
+        if ($rows['ma_qg'] == (isset($quocgia) ? $quocgia : "")) {
             $select = "selected";
          }else{
             $select = "";

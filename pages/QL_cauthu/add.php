@@ -198,9 +198,6 @@ $conn->close();
                                     </div>
 
 
-
-
-
                                     <div class="form-group">
                                         <label>Số áo</label>
                                         <input type="text" name="so" class="form-control" value="<?php echo $so ?>" placeholder="Số áo">
