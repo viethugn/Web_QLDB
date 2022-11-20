@@ -5,7 +5,7 @@ $masuaErr = $tensuaErr = $hangsuaErr = $loaisuaErr =
     $loiichErr = $anhErr = '';
 $masua = $tensua = $hangsua = $loaisua =
     $trongluong = $dongia = $hinhanh = $tpdinhduong =
-    $loiich = $anh = $namefile ='';
+    $loiich = $anh = $namefile = '';
 $flag = 0;
 if (isset($_POST['themmoi'])) {
     //mã sữa
@@ -93,17 +93,18 @@ if ($flag != 1 &&  isset($_POST['themmoi'])) {
         $loiich = $_POST['loiich'];
     }
     if ($_FILES['namefile']['name'] != NULL) {
-       $anhsua = $_FILES["namefile"]["name"];
+        $anhsua = $_FILES["namefile"]["name"];
     }
-     //Code xử lý, insert dữ liệu vào table
-     $sql = "INSERT INTO sua (Ma_sua, Ten_sua, Ma_hang_sua, Ma_loai_sua, Trong_luong, Don_gia, TP_Dinh_Duong, Loi_ich, Hinh)
+    //Code xử lý, insert dữ liệu vào table
+    $sql = "INSERT INTO sua (Ma_sua, Ten_sua, Ma_hang_sua, Ma_loai_sua, Trong_luong, Don_gia, TP_Dinh_Duong, Loi_ich, Hinh)
     VALUES ('$masua', '$tensua', '$mahangsua', '$maloaisua','$trongluong','$dongia','$tpdinhduong','$loiich','$anhsua')";
 
-     if (mysqli_query($conn, $sql)) {
-         echo "Thêm dữ liệu thành công";
-     } else {
-         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-     }
+    if (mysqli_query($conn, $sql)) {
+        echo "Thêm dữ liệu thành công!";
+        include('./hienthithongtinthem.php');
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
 }
 
 //Đóng database

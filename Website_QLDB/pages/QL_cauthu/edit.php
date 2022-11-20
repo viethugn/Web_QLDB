@@ -106,6 +106,7 @@ include('../../includes/header_admin.html');
                 <div class="content-wrapper">
                     <div class="row page-titles">
                         <div class="col-md-5 align-self-center">
+                            <i class="mdi mdi-arrow-left-drop-circle-outline"></i>
                             <a href="table-cau-thu.php" class="text-themecolor">Back</a>
                         </div>
                     </div>
@@ -150,12 +151,14 @@ include('../../includes/header_admin.html');
                                         include('select_option/caulacbo.php');
                                         ?>
                                     </div>
+                                    
                                     <div class="form-group">
                                         <label>Quốc gia</label>
                                         <?php
                                         include('select_option/quocgia.php');
                                         ?>
                                     </div>
+
                                     <div class="form-group">
                                         <label>Giới tính</label>
                                         <select class="form-control" name="gioitinh">
@@ -163,16 +166,20 @@ include('../../includes/header_admin.html');
                                             <option value="Nam" <?php if ($gioitinh == "Nam") echo 'selected' ?>>Nam</option>
                                         </select>
                                     </div>
+
                                     <div class="form-group">
                                         <label>Vị trí</label>
                                         <input type="text" name="vitri" class="form-control" value="<?php echo $vitri ?>" placeholder="Vị trí">
                                     </div>
+
                                     <div class="form-group">
                                         <label>Số áo</label>
                                         <input type="text" name="soao" class="form-control" value="<?php echo $soao ?>" placeholder="Số áo">
                                     </div>
-                                    <button type="submit" name="update" class="btn btn-primary mr-2">Update</button>
-                                    <button class="btn btn-light">Cancel</button>
+
+                                    <button class="btn btn-light btn_cancel_ct_update float-right">Hủy</button>
+                                    <button type="submit" name="update" class="btn btn-primary mr-2 btn_update_ct_update float-right">Cập nhật</button>
+                                    
                                 </form>
                             </div>
                         </div>
@@ -199,7 +206,7 @@ include('../../includes/header_admin.html');
     <script src="../../js/off-canvas.js"></script>
     <script src="../../js/hoverable-collapse.js"></script>
     <script src="../../js/template.js"></script>
-
+    <script src="../../js/name_admin.js"></script>
 </body>
 
 </html>

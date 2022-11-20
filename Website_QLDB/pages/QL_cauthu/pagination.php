@@ -64,7 +64,7 @@ if (mysqli_num_rows($result) <> 0) {
 } else {
 	$data .= '   
 	<tr>
-		<td scope="col">Không có dữ liệu</td>
+		<td colspan="9" scope="col">Không có dữ liệu!</td>
 	</tr>
 ';
 }

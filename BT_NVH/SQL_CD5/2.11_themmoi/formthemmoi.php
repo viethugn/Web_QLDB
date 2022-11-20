@@ -206,16 +206,19 @@ include('../header.html');
                                                                                                                 echo $namefile; ?>" disabled /> -->
                                     <input type="file" name="namefile" class="namefile" id="icondemo">
                                 </div>
-
                             </td>
                         </tr>
                     </table>
+
                     <input class="row mx-auto inp-sub" type="submit" name="themmoi" value="Thêm mới" />
+
                 </form>
             </div>
         </div>
+        <div class="row pt-5 mx-auto" style="width: 800px;">
+        
+        </div>
     </div>
-
 </div>
 
 <script type="text/javascript" src="jquery-filestyle-master/src/jquery-filestyle.js"></script>

@@ -18,8 +18,6 @@ include('../../includes/header_admin.html');
     ?>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper sidebar-fixed">
-      <!-- partial -->
-      <!-- partial:partials/_sidebar.html -->
       <?php
       include('../../includes/navbarleft_admin.html');
       ?>
@@ -196,7 +194,7 @@ include('../../includes/header_admin.html');
       $("#owl-demo").owlCarousel({
 
         navigation: true, // Show next and prev buttons
-        autoWidth:true,
+        autoWidth: true,
         slideSpeed: 400,
         paginationSpeed: 400,
         //autoplay

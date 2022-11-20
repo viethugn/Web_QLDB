@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <?php
 include('../../includes/header_admin.html');
+?>
+
+<?php
+
 // $ma_cau_thu = "";
 // $ho_ten_cau_thu = "";
 // $vi_tri = "";
@@ -29,34 +32,34 @@ $ho_ten_cau_thu = "";
 $vi_tri = "";
 $ngay_sinh = "";
 $gioi_tinh = "";
-$dia_chi ="";
-$ma_clb ="";
+$dia_chi = "";
+$ma_clb = "";
 $ma_qg = "";
-$so ="";
+$so = "";
 
 
 function lay_mct()
-    {
-        include("../samples/conect_database.php");
-        $sql = "SELECT (ma_cau_thu) FROM cau_thu";
-        $result = mysqli_query($conn, $sql);
-        $arr = [];
-        $i = 0;
-        if (mysqli_num_rows($result) <> 0) {
-            while ($rows = mysqli_fetch_row($result)) {
+{
+    include("../samples/conect_database.php");
+    $sql = "SELECT (ma_cau_thu) FROM cau_thu";
+    $result = mysqli_query($conn, $sql);
+    $arr = [];
+    $i = 0;
+    if (mysqli_num_rows($result) <> 0) {
+        while ($rows = mysqli_fetch_row($result)) {
 
-                $st_mact_max = substr($rows['0'], 2, 2);
-                $n_mact_new = (int)$st_mact_max;
-                $arr[$i] = $n_mact_new;
-                $i++;
-            }
+            $st_mact_max = substr($rows['0'], 2, 2);
+            $n_mact_new = (int)$st_mact_max;
+            $arr[$i] = $n_mact_new;
+            $i++;
         }
-        $mact_new = max($arr) + 1;
-        return $mact_new;
     }
+    $mact_new = max($arr) + 1;
+    return $mact_new;
+}
 
-    $ma_cau_thu = "ct" . lay_mct();
-    
+$ma_cau_thu = "ct" . lay_mct();
+
 
 //Lấy giá trị POST từ form vừa submit
 if (isset($_POST['create'])) {
@@ -89,7 +92,7 @@ if (isset($_POST['create'])) {
         $so = $_POST['so'];
     }
 
-    
+
 
     //Code xử lý, insert dữ liệu vào table
     $sql = "INSERT INTO cau_thu (ma_cau_thu, ho_ten_cau_thu, vi_tri, ngay_sinh, gioi_tinh, dia_chi, ma_clb, ma_qg, so)
@@ -186,14 +189,14 @@ $conn->close();
                                     <div class="form-group">
                                         <label>Mã câu lạc bộ</label>
                                         <?php
-                                            include('select_option/caulacbo.php');
+                                        include('select_option/caulacbo.php');
                                         ?>
                                     </div>
 
                                     <div class="form-group">
                                         <label>Mã quốc gia</label>
                                         <?php
-                                            include('select_option/quocgia.php');
+                                        include('select_option/quocgia.php');
                                         ?>
                                     </div>
 
@@ -203,8 +206,9 @@ $conn->close();
                                         <input type="text" name="so" class="form-control" value="<?php echo $so ?>" placeholder="Số áo">
                                     </div>
 
-                                    <button type="submit" name="create" class="btn btn-primary mr-2">Kí hợp đồng</button>
-                                    <button class="btn btn-light">Cancel</button>
+                                    <button class="btn btn-light btn_cancel_ct_khd float-right">Hủy</button>
+                                    <button type="submit" name="create" class="btn btn-primary mr-2 btn_add_ct_khd float-right">Kí hợp đồng</button>
+                                    
                                 </form>
                             </div>
                         </div>
@@ -229,7 +233,7 @@ $conn->close();
     <script src="../../js/off-canvas.js"></script>
     <script src="../../js/hoverable-collapse.js"></script>
     <script src="../../js/template.js"></script>
-
+    <script src="../../js/name_admin.js"></script>
 </body>
 
 </html>

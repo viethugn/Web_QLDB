@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,18 +30,32 @@ include('./xulydangnhap.php');
 ?>
 
 <body class="login-backgou">
+  <!-- <div class="container-scroller">
+    <div class="row page-titles">
+      <div class="col-md-5 align-self-center">
+        <a href="../../../index.php">Website Bài tập</a>
+      </div>
+    </div>
+  </div> -->
   <div class="container-scroller">
+    <!-- ---------- back pages bài tập---------- -->
+    <div class="row page_back_row">
+      <div class="col-md-5 align-self-center page_back_link">
+        <a href="../../../index.php">Website Bài tập</a>
+      </div>
+    </div>
+    <!-- ----------- main ------------- -->
     <div class="container-fluid page-body-wrapper full-page-wrapper login_admin">
       <div class="content-wrapper d-flex align-items-center auth px-0">
         <div class="row w-100 mx-0">
           <div class="col-lg-4 mx-auto">
-            <div  class="auth-form-light text-left py-5 px-4 px-sm-5 input_form_login">
+            <div class="auth-form-light text-left py-5 px-4 px-sm-5 input_form_login">
               <div class="brand-logo">
                 <h3><b>Xin chào Admin, cùng bắt đầu nào!</b></h3>
               </div>
-              <form  action="" method="POST" class="pt-3">
+              <form action="" method="POST" class="pt-3">
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg input_holder_show"  name="tai_khoan" placeholder="Username" required value="<?php echo $tai_khoan; ?>">
+                  <input type="text" class="form-control form-control-lg input_holder_show" name="tai_khoan" placeholder="Username" required value="<?php echo $tai_khoan; ?>">
                 </div>
                 <div class="form-group">
                   <input type="password" class="form-control form-control-lg input_holder_show" name="mat_khau" placeholder="Password" required value="<?php echo $mat_khau; ?>">
